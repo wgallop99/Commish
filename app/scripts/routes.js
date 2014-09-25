@@ -67,19 +67,19 @@ angular.module('firetestApp')
         controller: 'LoginCtrl'
       })
 
-      .when('/chat', {
-        templateUrl: 'views/chat.html',
-        controller: 'ChatCtrl'
-      })
-
       .whenAuthenticated('/account', {
         templateUrl: 'views/account.html',
         controller: 'AccountCtrl'
       })
 
-      .when('/chat', {
-        templateUrl: 'views/chat.html',
-        controller: 'ChatCtrl'
+      .when('/event', {
+        templateUrl: 'views/event.html',
+        controller: 'EventCtrl'
+      })
+
+      .when('/addEvent', {
+        templateUrl: 'views/addevent.html',
+        controller: 'EventCtrl'
       })
       .otherwise({redirectTo: '/'});
   }])

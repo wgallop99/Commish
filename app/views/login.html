@@ -2,7 +2,6 @@
 <h2>Login Page</h2>
 
 <fieldset>
-  <legend>Oauth</legend>
   <p>
     <button  class="btn btn-primary" ng-click="oauthlogin('twitter')">Twitter</button>
   </p>
@@ -10,12 +9,10 @@
 
 <form role="form">
   <p class="form-group">
-    <label for="loginEmail">email</label>
-    <input id="loginEmail" required name="email" type="email" ng-model="email" class="form-control" />
+    <input id="loginEmail" required name="email" type="email" ng-model="email" placeholder="Email" class="form-control" />
   </p>
   <p class="form-group">
-    <label for="loginPass">password</label>
-    <input id="loginPass" required name="pass" type="password" ng-model="pass" class="form-control" />
+    <input id="loginPass" required name="pass" type="password" ng-model="pass" placeholder="Password" class="form-control" />
   </p>
   <p class="form-group" ng-cloak ng-show="createMode">
     <label for="loginConfirm">confirm pass</label>

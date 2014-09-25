@@ -1,0 +1,19 @@
+<h2>GAMES</h2>
+
+<form class="form-inline form-group eventSearch">
+  <input class="form-control" type="text" ng-model="search.type" placeholder="Search Sports" >
+  <input class="form-control" type="date" ng-model="search.date">
+  <input class="form-control" type="text" ng-model="search.location" placeholder="Search Locations">
+</form>
+
+<div class="eventContainer container">
+  <div ng-repeat="event in events | filter:search:strict">
+    <div class="eventLists row">
+      <div class="col-lg-4 col-md-4 col-sm-4 eventItem">{{event.type}}</div>
+      <div class="col-lg-4 col-md-4 col-sm-4 eventItem">{{event.date | date:"MM/dd/yyyy 'at' h:mm a"}}</div>
+      <div class="col-lg-4 col-md-4 col-sm-4 eventItem">{{event.location}}</div>
+    </div>
+  </div>
+</div>
+
+<p class="alert alert-danger" ng-show="err">{{err}}</p>

@@ -1,0 +1,6 @@
+<form>
+  <input placeholder="Type of Sport" ng-model="newEvent.type">
+  <input type="datetime-local" ng-model="newEvent.date" placeholder="When?">
+  <input type="text" ng-model="newEvent.location" placeholder="Where?">
+  <button type="submit" ng-click="addEvent(newEvent);newEvent = null;">Add Event</button>
+</form>
