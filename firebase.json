@@ -1,0 +1,9 @@
+{
+  "firebase": "commish",
+  "public": "dist",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
