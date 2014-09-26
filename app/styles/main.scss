@@ -1,13 +1,84 @@
 // bower:scss
 // endbower
 
-
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-image: url('http://photos3.meetupstatic.com/photos/event/7/0/2/8/highres_126508712.jpeg');
-  background-size: 100%;
-  background-repeat: no-repeat;
+  padding: 0px;
+  margin: 0px;
+  font-family: sans-serif;
+}
+
+p {
+  color: white;
+}
+
+h1 {
+  color: white;
+}
+
+h2 {
+  color: #43BCF0;
+}
+
+h3 {
+  color: #43BCF0
+}
+
+a {
+  color: #43BCF0;
+}
+
+.background {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  margin:0px;
+  padding: 0px;
+
+  img {
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    filter: grayscale(100%);
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+  }
+}
+
+.carousel.fade {
+  opacity: 1;
+}
+
+.carousel.fade .item {
+  -moz-transition: opacity ease-in-out .7s;
+  -o-transition: opacity ease-in-out .7s;
+  -webkit-transition: opacity ease-in-out .7s;
+  transition: opacity ease-in-out .7s;
+  left: 0 !important;
+  opacity: 0;
+  top:0;
+  position:absolute;
+  width: 100%;
+  display:block !important;
+  z-index:1;
+}
+
+.carousel.fade .item:first-child {
+  top:auto;
+  position:relative;
+}
+
+.carousel.fade .item.active {
+  opacity: 1;
+  -moz-transition: opacity ease-in-out .7s;
+  -o-transition: opacity ease-in-out .7s;
+  -webkit-transition: opacity ease-in-out .7s;
+  transition: opacity ease-in-out .7s;
+  z-index:2;
 }
 
 .container {
@@ -41,7 +112,7 @@ h2 {
   height: 300px;
   overflow: auto;
 
-  .eventList {
+  .eventLists {
     list-style-type: none;
     padding: 0px;
     margin: 0px;
@@ -51,6 +122,30 @@ h2 {
   .eventItem {
     color: white;
     margin: 5px 0px;
+    font-size: 18px;
+  }
+
+  .eventDate {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #43BCF0;
+  }
+}
+
+/* Add Event Page  */
+.addEventContainer {
+
+}
+
+.addForm {
+  text-align: center;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  input {
+    display: block;
+    margin: 10px;
   }
 }
 
