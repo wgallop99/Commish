@@ -13,6 +13,7 @@ angular.module('firetestApp')
 
     $scope.addEvent = function(newEvent) {
         $scope.events.$add({
+          name: $scope.profile.name,
           icon: newEvent.icon,
           type: newEvent.type,
           date: newEvent.date,

@@ -1,4 +1,3 @@
-
 <div class="row-fluid">
   <div class="col-lg-4 col-md-4 col-sm-12 row">
     <div class="{{user.provider === 'password'? 'col-md-12' : 'col-md-12'}}">
@@ -60,12 +59,20 @@
   <div class="col-lg-6 col-md-6 col-sm-12 row addEventContainer">
     <button ng-hide="create" ng-click="create=!create" class="button addButton">Create Event</button>
     <form ng-show="create" class="addForm form-group" ng-submit="addEvent(newEvent); newEvent = null;">
+
       <select class="form-control" ng-model="newEvent.icon">
-        <option value="glyphicon glyphicon-rugby">Football</option>
-        <option value="glyphicon glyphicon-">Soccer</option>
-        <option value="glyphicon glyphicon-">Baseball</option>
-        <option value="glyphicon glyphicon-">Bowling</option>
+        <option value="flaticon-basketball35">Basketball</option>
+        <option value="flaticon-rugby98">Football</option>
+        <option value="flaticon-soccer43">Soccer</option>
+        <option value="flaticon-tennis18">Tennis</option>
       </select>
+
+      <span class="flaticon-soccer43 icon"></span>
+      <span class="flaticon-rugby98 icon"></span>
+      <span class="flaticon-basketball35 icon"></span>
+      <span class="flaticon-barbell icon"></span>
+      <span class="flaticon-tennis18 icon"></span>
+
       <input class="form-control" placeholder="Game Description" ng-model="newEvent.type">
       <input class="form-control" type="datetime-local" ng-model="newEvent.date" placeholder="When?">
       <input class="form-control" type="text" ng-model="newEvent.location" placeholder="Where?">

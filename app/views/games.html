@@ -9,10 +9,11 @@
 <div class="eventContainer container">
   <div ng-repeat="event in events | filter:search:strict | reverse">
     <div class="eventLists row">
-      <div class="col-lg-2 col-md-2 col-sm-12 eventItem"><i class="{{event.icon}}"></i></div>
+      <div class="col-lg-1 col-md-2 col-sm-12 eventIcon"><i class="{{event.icon}} icon"></i></div>
       <div class="col-lg-2 col-md-2 col-sm-12 eventItem">{{event.type}}</div>
-      <div class="col-lg-3 col-md-3 col-sm-12 eventDate">{{event.date | date:"EEE, MMM d, y' at' h:mm a"}}</div>
-      <div class="col-lg-3 col-md-3 col-sm-12 eventItem">{{event.location}}</div>
+      <div class="col-lg-3 col-md-2 col-sm-12 eventDate">{{event.date | date:"EEE, MMM d, y' at' h:mm a"}}</div>
+      <div class="col-lg-2 col-md-2 col-sm-12 eventItem">{{event.location}}</div>
+      <div class="col-lg-2 col-md-2 col-sm-12 eventItem">{{event.name}}</div>
       <div class="col-lg-2 col-md-2 col-sm-12"><a class="button" href="#/game">View Game</a></div>
     </div>
   </div>
