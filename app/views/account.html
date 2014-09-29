@@ -83,12 +83,12 @@
   <div class="col-lg-8 col-md-8 col-sm-12 row profileEvents">
 
 <!--     if no events created yet...needs to be ng-ifed  -->
-    <div class="userEvent col-lg-4 col-md-4 col-sm-12">
+    <div class="userEvent col-lg-4 col-md-4 col-sm-12" ng-show="profile.name === event.name" ng-repeat="event in events">
 
-      <i class="event.icon"></i>
-      <h3>event.description</h3>
-      <p>event.date</p>
-      <p>event.location</p>
+      <i class="{{event.icon}} icon"></i>
+      <h3>{{event.type}}</h3>
+      <p>{{event.date | date:"EEE, MMM d, y' at' h:mm a"}}</p>
+      <p>{{event.location}}</p>
   <!--   Might have to go to a separate page to edit event? -->
       <button class="button">Edit Event</button>
 
