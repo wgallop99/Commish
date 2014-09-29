@@ -72,13 +72,13 @@ angular.module('firetestApp')
         controller: 'AccountCtrl'
       })
 
-      .when('/event', {
-        templateUrl: 'views/event.html',
+      .when('/games', {
+        templateUrl: 'views/games.html',
         controller: 'EventCtrl'
       })
 
-      .when('/addEvent', {
-        templateUrl: 'views/addevent.html',
+      .when('/game', {
+        templateUrl: 'views/game.html',
         controller: 'EventCtrl'
       })
       .otherwise({redirectTo: '/'});

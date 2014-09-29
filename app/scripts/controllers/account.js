@@ -8,6 +8,18 @@
  */
 angular.module('firetestApp')
   .controller('AccountCtrl', function ($scope, user, simpleLogin, fbutil, $timeout) {
+
+    $scope.events = fbutil.syncArray('events');
+
+    $scope.addEvent = function(newEvent) {
+        $scope.events.$add({
+          icon: newEvent.icon,
+          type: newEvent.type,
+          date: newEvent.date,
+          location: newEvent.location
+      });
+    };
+
     $scope.user = user;
     $scope.logout = simpleLogin.logout;
     $scope.messages = [];

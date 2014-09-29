@@ -12,7 +12,7 @@
       </form>
 
       <p>
-        <button role="button" ng-click="logout()" class="btn btn-danger">Log Out</button>
+        <button role="button" ng-click="logout()" class="button">Log Out</button>
       </p>
     </div>
 
@@ -32,7 +32,7 @@
         <input placeholder="Confirm New Password" type="password" ng-keypress="clear()" ng-model="confirm" class="form-control" />
       </p>
 
-      <button class="btn btn-primary" ng-click="changePassword(oldpass, newpass, confirm)">change password</button>
+      <button class="button" ng-click="changePassword(oldpass, newpass, confirm)">Change Password</button>
 
       <p class="error" ng-show="err">{{err}}</p>
       <p class="good" ng-show="msg">{{msg}}</p>
@@ -51,14 +51,47 @@
         <input placeholder="Password" type="password" ng-keypress="clear()" ng-model="pass" class="form-control" />
       </p>
 
-      <button class="btn btn-primary" ng-click="changeEmail(pass, newEmail)">update email</button>
+      <button class="button" ng-click="changeEmail(pass, newEmail)">Update Email</button>
     </form>
     </div>
   </div>
 
-  <div class="col-lg-8 col-md-8 col-sm-12 profileEvents">
-    <a href="#/addEvent" class="btn btn-success addButton">Create Event</a>
+  <!-- Add event section -->
+  <div class="col-lg-6 col-md-6 col-sm-12 row addEventContainer">
+    <button ng-hide="create" ng-click="create=!create" class="button addButton">Create Event</button>
+    <form ng-show="create" class="addForm form-group" ng-submit="addEvent(newEvent); newEvent = null;">
+      <select class="form-control" ng-model="newEvent.icon">
+        <option value="glyphicon glyphicon-rugby">Football</option>
+        <option value="glyphicon glyphicon-">Soccer</option>
+        <option value="glyphicon glyphicon-">Baseball</option>
+        <option value="glyphicon glyphicon-">Bowling</option>
+      </select>
+      <input class="form-control" placeholder="Game Description" ng-model="newEvent.type">
+      <input class="form-control" type="datetime-local" ng-model="newEvent.date" placeholder="When?">
+      <input class="form-control" type="text" ng-model="newEvent.location" placeholder="Where?">
+      <button class="button" type="submit" ng-click="create=!create">Add Event</button>
+    </form>
   </div>
+
+  <div class="col-lg-8 col-md-8 col-sm-12 row profileEvents">
+
+<!--     if no events created yet...needs to be ng-ifed  -->
+    <div class="userEvent col-lg-4 col-md-4 col-sm-12">
+
+      <i class="event.icon"></i>
+      <h3>event.description</h3>
+      <p>event.date</p>
+      <p>event.location</p>
+  <!--   Might have to go to a separate page to edit event? -->
+      <button class="button">Edit Event</button>
+
+    </div>
+
+  </div>
+
 </div>
+
+
+
 <p class="clearfix"></p>
 <div ng-repeat="message in messages" class="alert alert-{{message.type}}">{{message.text}}</div>
