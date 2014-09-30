@@ -1,7 +1,14 @@
 <h2 class="eventHeading">GAMES</h2>
 
 <form class="form-inline form-group eventSearch">
-  <input class="form-control" type="text" ng-model="search.type" placeholder="Search Sports" >
+  <select class="form-control" ng-model="search.icon">
+    <option value="">All</option>
+    <option value="flaticon-basketball35">Basketball</option>
+    <option value="flaticon-rugby98">Football</option>
+    <option value="flaticon-soccer43">Soccer</option>
+    <option value="flaticon-tennis18">Tennis</option>
+  </select>
+  <input class="form-control" type="text" ng-model="search.type" placeholder="Search Titles" >
   <input class="form-control" type="date" ng-model="search.date">
   <input class="form-control" type="text" ng-model="search.location" placeholder="Search Locations">
 </form>
@@ -9,12 +16,12 @@
 <div class="eventContainer container">
   <div ng-repeat="event in events | filter:search:strict | reverse">
     <div class="eventLists row">
-      <div class="col-lg-1 col-md-1 col-sm-12 eventIcon"><i class="{{event.icon}} icon"></i></div>
-      <div class="col-lg-2 col-md-2 col-sm-12 eventItem">{{event.type}}</div>
-      <div class="col-lg-3 col-md-3 col-sm-12 eventDate">{{event.date | date:"EEE, MMM d, y' at' h:mm a"}}</div>
+      <div class="col-lg-2 col-md-2 col-sm-12 eventIcon"><i class="{{event.icon}} icon"></i></div>
+      <div class="col-lg-2 col-md-2 col-sm-12 eventDescription"><h1>{{event.type}}</h1></div>
+      <div class="col-lg-2 col-md-2 col-sm-12 eventDate">{{event.date | date:"MM/dd/yyyy' at' h:mm a"}}</div>
       <div class="col-lg-2 col-md-2 col-sm-12 eventItem">{{event.location}}</div>
-      <div class="col-lg-2 col-md-2 col-sm-12 eventItem">{{event.name}}</div>
-      <div class="col-lg-2 col-md-2 col-sm-12"><a class="button" href="#/game">View Game</a></div>
+      <div class="col-lg-2 col-md-2 col-sm-12 eventUser">{{event.name}}</div>
+      <div class="col-lg-2 col-md-2 col-sm-12 eventButton"><button class="button" ng-click="getEvent(event)">View Game</button></div>
     </div>
   </div>
 </div>

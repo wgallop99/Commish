@@ -67,12 +67,6 @@
         <option value="flaticon-tennis18">Tennis</option>
       </select>
 
-      <span class="flaticon-soccer43 icon"></span>
-      <span class="flaticon-rugby98 icon"></span>
-      <span class="flaticon-basketball35 icon"></span>
-      <span class="flaticon-barbell icon"></span>
-      <span class="flaticon-tennis18 icon"></span>
-
       <input class="form-control" placeholder="Game Description" ng-model="newEvent.type">
       <input class="form-control" type="datetime-local" ng-model="newEvent.date" placeholder="When?">
       <input class="form-control" type="text" ng-model="newEvent.location" placeholder="Where?">
@@ -83,7 +77,7 @@
   <div class="col-lg-8 col-md-8 col-sm-12 row profileEvents">
 
 <!--     if no events created yet...needs to be ng-ifed  -->
-    <div class="userEvent col-lg-4 col-md-4 col-sm-12" ng-show="profile.name === event.name" ng-repeat="event in events">
+    <div class="userEvent" ng-show="profile.name === event.name" ng-repeat="event in events">
 
       <i class="{{event.icon}} icon"></i>
       <h3>{{event.type}}</h3>
@@ -91,7 +85,7 @@
       <p>{{event.location}}</p>
   <!--   Might have to go to a separate page to edit event? -->
       <button class="button">Edit Event</button>
-
+      <button class="button" ng-click="events.$remove(event)">Delete</button>
     </div>
 
   </div>
