@@ -78,21 +78,25 @@
 
 <!--     if no events created yet...needs to be ng-ifed  -->
     <div class="userEvent" ng-show="profile.name === event.name" ng-repeat="event in events">
+      <select class="form-control" ng-model="event.icon">
+        <option value="flaticon-basketball35">Basketball</option>
+        <option value="flaticon-rugby98">Football</option>
+        <option value="flaticon-soccer43">Soccer</option>
+        <option value="flaticon-tennis18">Tennis</option>
+      </select>
 
-      <i class="{{event.icon}} icon"></i>
-      <h3>{{event.type}}</h3>
-      <p>{{event.date | date:"EEE, MMM d, y' at' h:mm a"}}</p>
-      <p>{{event.location}}</p>
+      <input class="form-control" placeholder="Game Description" ng-model="event.type">
+      <input class="form-control" type="datetime-local" ng-model="event.date" placeholder="When?">
+      <input class="form-control" type="text" ng-model="event.location" placeholder="Where?">
+<!--       <h3>{{event.type}}</h3>
+<i class="{{event.icon}} icon"></i>
+<p>{{event.date | date:"EEE, MMM d, y' at' h:mm a"}}</p>
+<p>{{event.location}}</p> -->
   <!--   Might have to go to a separate page to edit event? -->
-      <button class="button">Edit Event</button>
+      <button class="button" ng-click="events.$save(event)">Edit Event</button>
       <button class="button" ng-click="events.$remove(event)">Delete</button>
     </div>
 
   </div>
 
 </div>
-
-
-
-<p class="clearfix"></p>
-<div ng-repeat="message in messages" class="alert alert-{{message.type}}">{{message.text}}</div>

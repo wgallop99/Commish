@@ -1,9 +1,7 @@
 <div class="row singleEvent">
-
-  <div class="col-lg-3"><img src="" alt=""></div>
-  <div class="col-lg-3"><h1>{{singleEvent.type}}</h1></div>
-  <div class="col-lg-3"><h3>{{singleEvent.date}}</h3></div>
-  <div class="col-lg-3"><h3>{{singleEvent.location}}</h3></div>
+  <h1>{{singleEvent.type}}<div class="iconContainer"><i class="{{singleEvent.icon}} icon"></i></div></h1>
+  <h3>{{singleEvent.date | date:"MMM d, y' at' h:mm a"}}</h3>
+  <h3>{{singleEvent.location}}</h3>
 </div>
 
 <div class="row inGameContainer">
