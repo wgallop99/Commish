@@ -21,9 +21,37 @@
       <div class="col-lg-2 col-md-2 col-sm-12 eventDate">{{event.date | date:"MM/dd/yyyy' at' h:mm a"}}</div>
       <div class="col-lg-2 col-md-2 col-sm-12 eventItem">{{event.location}}</div>
       <div class="col-lg-2 col-md-2 col-sm-12 eventUser">{{event.name}}</div>
-      <div class="col-lg-2 col-md-2 col-sm-12 eventButton"><button class="button" ng-click="getEvent(event)">View Game</button></div>
+      <div class="col-lg-2 col-md-2 col-sm-12 eventButton">
+        <button ng-click="getEvent(event)" data-toggle="modal" data-target="#myModal" class="button">View Game</button>
+      </div>
     </div>
   </div>
 </div>
 
-<p class="alert alert-danger" ng-show="err">{{err}}</p>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    </div>
+    <div class="modal-body">
+      <div class="row singleEvent">
+        <div class="iconContainer"><i class="{{singleEvent.icon}} icon"></i></div>
+        <h1>{{singleEvent.type}}</h1>
+        <h3>{{singleEvent.date | date:"MMM d, y' at' h:mm a"}}</h3>
+        <h3>{{singleEvent.location}}</h3>
+      </div>
+    </div>
+      <div class="modal-footer">
+        <div class="row teamContainer">
+          <div class="col-lg-5 col-md-5 col-sm-5 col-xsm-5 team1"></div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xsm-2 center">
+            <button class="button randomize">Randomize</button>
+            <h1 class="versus">V</h1>
+          </div>
+          <div class="col-lg-5 col-md-5 col-sm-5 col-xsm-5 team2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

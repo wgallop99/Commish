@@ -60,17 +60,18 @@
     <button ng-hide="create" ng-click="create=!create" class="button addButton">Create Event</button>
     <form ng-show="create" class="addForm form-group" ng-submit="addEvent(newEvent); newEvent = null;">
 
-      <select class="form-control" ng-model="newEvent.icon">
+      <select class="form-control" ng-model="newEvent.icon" required>
         <option value="flaticon-basketball35">Basketball</option>
         <option value="flaticon-rugby98">Football</option>
         <option value="flaticon-soccer43">Soccer</option>
         <option value="flaticon-tennis18">Tennis</option>
       </select>
 
-      <input class="form-control" placeholder="Game Description" ng-model="newEvent.type">
-      <input class="form-control" type="datetime-local" ng-model="newEvent.date" placeholder="When?">
-      <input class="form-control" type="text" ng-model="newEvent.location" placeholder="Where?">
+      <input class="form-control" placeholder="Game Description" ng-model="newEvent.type" required>
+      <input class="form-control" type="datetime-local" ng-model="newEvent.date" placeholder="When?" required>
+      <input class="form-control" type="text" ng-model="newEvent.location" placeholder="Where?" required>
       <button class="button" type="submit" ng-click="create=!create">Add Event</button>
+      <a class="button linkButton" ng-click="create=!create">Cancel</a>
     </form>
   </div>
 

@@ -20,7 +20,6 @@
     $scope.getEvent = function (type) {
       $rootScope.singleEvent = type;
       console.log($rootScope.singleEvent);
-      $location.path('/game');
     };
 
 }]);

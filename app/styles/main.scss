@@ -46,6 +46,12 @@ a {
   border: 2px solid #43BCF0;
 }
 
+.linkButton:hover {
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 3px;
+}
+
 .background {
   position: absolute;
   top: 0px;
@@ -232,6 +238,15 @@ h2 {
 }
 
 /* single event page styling */
+
+.modal-dialog {
+  width: 68%;
+}
+
+.modal-content {
+  background-color: black;
+  text-align: center;
+}
 
 .team1, .team2 {
   background-color: rgba(0, 0, 0, 0.5);
