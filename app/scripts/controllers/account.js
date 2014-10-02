@@ -27,13 +27,13 @@ angular.module('firetestApp')
       var ref = fbutil.ref('events/' + key);
       ref.once('value', function (data) {
         $rootScope.singleEvent = data.val();
-      })
+      });
       console.log($rootScope.singleEvent);
     };
 
-    $scope.updateEvent = function (key) {
+    $scope.updateEvent = function (key, data) {
       var ref = fbutil.ref('events/' + key);
-      $scope.updateEvent = events.$save(ref);
+      ref.$save(data);
     };
 
     $scope.user = user;

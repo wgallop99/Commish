@@ -19,7 +19,7 @@ p {
 h1 {
   color: white;
 }
-  
+
 h2 {
   color: #43BCF0;
 }
@@ -27,6 +27,7 @@ h2 {
 h3 {
   color: #43BCF0;
   /* text-shadow: black 0 2px; */
+  margin-top: 10px 0px;
 }
 
 a {
@@ -226,8 +227,6 @@ h2 {
   }
 }
 
-
-
 .input-group-btn {
   padding: 0px;
 }
@@ -235,6 +234,7 @@ h2 {
 .profileEvents {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
+  max-height: 225px;
   margin: 10px;
   padding: 10px 0px;
   overflow: auto;
@@ -246,10 +246,15 @@ h2 {
   min-height: 5%;
   display: inline-block;
   padding: 5px 20px;
+  margin-top: 5px;
 }
 
 .singleEvent {
   margin: 0 30%;
+}
+
+.eventTypeHeading {
+  margin: 0px;
 }
 
 
@@ -311,6 +316,38 @@ h2 {
   margin-bottom: 3px;
   display: inline-block;
 }
+
+/* in game page */
+
+.inGameContainer {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.timer {
+  text-align: center;
+
+  h3 {
+    font-size: 126px;
+  }
+
+  button {
+    font-size: 1em;
+    padding: 10px 15px;
+    margin-right: 5px;
+  }
+}
+
+.warning:hover {
+  color: red;
+  border: 2px solid red;
+}
+
+.go:hover {
+  color: green;
+  border: 2px solid green;
+}
+
 
 
 /* Responsive: Portrait tablets and up */

@@ -17,5 +17,6 @@ angular.module('firetestApp', [
     'firebase',
     'firebase.utils',
     'simpleLogin',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'timer'
   ]);

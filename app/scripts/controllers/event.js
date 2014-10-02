@@ -22,7 +22,7 @@
       var ref = fbutil.ref('events/' + key);
       ref.once('value', function (data) {
         $rootScope.singleEvent = data.val();
-      })
+      });
       // $rootScope.singleEvent = $firebase(ref);
       console.log($rootScope.singleEvent);
     };

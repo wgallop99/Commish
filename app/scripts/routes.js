@@ -77,6 +77,10 @@ angular.module('firetestApp')
         controller: 'EventCtrl'
       })
       
+      .when('/inGame', {
+        templateUrl: 'views/ingame.html',
+        controller: 'IngameCtrl'
+      })
       .otherwise({redirectTo: '/'});
   }])
 

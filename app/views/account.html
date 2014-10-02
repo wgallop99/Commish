@@ -84,7 +84,7 @@
 
 <!--     if no events created yet...needs to be ng-ifed  -->
     <div class="userEvent" ng-show="profile.name === event.name" ng-repeat="event in events | reverse">
-      <h3>{{event.type}}</h3>
+      <h3 class="eventTypeHeading">{{event.type}}</h3>
       <i class="{{event.icon}} icon"></i>
       <p>{{event.date | date:"EEE, MMM d, y' at' h:mm a"}}</p>
       <p>{{event.location}}</p>
@@ -119,7 +119,7 @@
             <input class="form-control" placeholder="Game Description" ng-model="singleEvent.type">
             <input class="form-control" type="datetime-local" ng-model="singleEvent.date" placeholder="When?">
             <input class="form-control" type="text" ng-model="singleEvent.location" placeholder="Where?">
-            <button class="button" ng-click="events.$save(event.$id)">Update</button>
+            <button class="button" ng-click="updateEvent(key, singleEvent)">Update</button>
           </form>
 
           <!-- <button class="button">Sign Up</button> -->
@@ -127,6 +127,7 @@
         </div>
       </div>
         <div class="modal-footer">
+
           <div class="row teamContainer" ng-show="singleEvent.icon === 'flaticon-basketball35' || singleEvent.icon === 'flaticon-rugby98' || singleEvent.icon === 'flaticon-soccer43' || singleEvent.icon ==='flaticon-basketball35' || singleEvent.icon === 'flaticon-man362'">
             <div class="col-lg-5 col-md-5 col-sm-5 col-xsm-5 team1"></div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xsm-2 center">
