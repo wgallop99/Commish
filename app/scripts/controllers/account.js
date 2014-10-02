@@ -7,8 +7,9 @@
  * Provides rudimentary account management functions.
  */
 angular.module('firetestApp')
-  
-  .controller('AccountCtrl', function ($scope, user, simpleLogin, fbutil, $timeout) {
+
+  .controller('AccountCtrl',
+    function ($scope, $rootScope, user, simpleLogin, fbutil, $timeout) {
 
     $scope.events = fbutil.syncArray('events');
 
@@ -20,6 +21,19 @@ angular.module('firetestApp')
           date: newEvent.date,
           location: newEvent.location
       });
+    };
+
+    $scope.getEvent = function (key) {
+      var ref = fbutil.ref('events/' + key);
+      ref.once('value', function (data) {
+        $rootScope.singleEvent = data.val();
+      })
+      console.log($rootScope.singleEvent);
+    };
+
+    $scope.updateEvent = function (key) {
+      var ref = fbutil.ref('events/' + key);
+      $scope.updateEvent = events.$save(ref);
     };
 
     $scope.user = user;
@@ -75,4 +89,5 @@ angular.module('firetestApp')
       }
       fbutil.syncObject('users/'+user.uid).$bindTo($scope, 'profile');
     }
-  });
+
+});

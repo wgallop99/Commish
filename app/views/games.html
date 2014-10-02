@@ -1,20 +1,28 @@
 <h2 class="eventHeading">GAMES</h2>
 
 <form class="form-inline form-group eventSearch">
+
   <select class="form-control" ng-model="search.icon">
     <option value="">All</option>
     <option value="flaticon-basketball35">Basketball</option>
+    <option value="flaticon-mountain24">Bike</option>
     <option value="flaticon-rugby98">Football</option>
+    <option value="flaticon-man362">Frisbee</option>
+    <option value="flaticon-running30">Run</option>
     <option value="flaticon-soccer43">Soccer</option>
     <option value="flaticon-tennis18">Tennis</option>
+    <option value="flaticon-weightlift">Weightlifting</option>
+    <option value="flaticon-guru">Yoga</option>
+    <option value="flaticon-sportive36">Other</option>
   </select>
+
   <input class="form-control" type="text" ng-model="search.type" placeholder="Search Titles" >
   <input class="form-control" type="date" ng-model="search.date">
   <input class="form-control" type="text" ng-model="search.location" placeholder="Search Locations">
 </form>
 
 <div class="eventContainer container">
-  <div ng-repeat="event in events | filter:search:strict | reverse">
+  <div ng-repeat="event in events | filter:search:strict | reverse | oldGames">
     <div class="eventLists row">
       <div class="col-lg-2 col-md-2 col-sm-12 eventIcon"><i class="{{event.icon}} icon"></i></div>
       <div class="col-lg-2 col-md-2 col-sm-12 eventDescription"><h1>{{event.type}}</h1></div>
@@ -22,7 +30,7 @@
       <div class="col-lg-2 col-md-2 col-sm-12 eventItem">{{event.location}}</div>
       <div class="col-lg-2 col-md-2 col-sm-12 eventUser">{{event.name}}</div>
       <div class="col-lg-2 col-md-2 col-sm-12 eventButton">
-        <button ng-click="getEvent(event)" data-toggle="modal" data-target="#myModal" class="button">View Game</button>
+        <button ng-click="getEvent(event.$id)" data-toggle="modal" data-target="#myModal" class="button">View Game</button>
       </div>
     </div>
   </div>
@@ -40,10 +48,12 @@
         <h1>{{singleEvent.type}}</h1>
         <h3>{{singleEvent.date | date:"MMM d, y' at' h:mm a"}}</h3>
         <h3>{{singleEvent.location}}</h3>
+
+        <button class="button">Sign Up</button>
       </div>
     </div>
       <div class="modal-footer">
-        <div class="row teamContainer">
+        <div class="row teamContainer" ng-show="singleEvent.icon === 'flaticon-basketball35' || singleEvent.icon === 'flaticon-rugby98' || singleEvent.icon === 'flaticon-soccer43' || singleEvent.icon ==='flaticon-basketball35' || singleEvent.icon === 'flaticon-man362'">
           <div class="col-lg-5 col-md-5 col-sm-5 col-xsm-5 team1"></div>
           <div class="col-lg-2 col-md-2 col-sm-2 col-xsm-2 center">
             <button class="button randomize">Randomize</button>

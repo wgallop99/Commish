@@ -16,5 +16,6 @@ angular.module('firetestApp', [
     'ngTouch',
     'firebase',
     'firebase.utils',
-    'simpleLogin'
+    'simpleLogin',
+    'ui.bootstrap'
   ]);

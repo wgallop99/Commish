@@ -19,7 +19,7 @@ p {
 h1 {
   color: white;
 }
-
+  
 h2 {
   color: #43BCF0;
 }
@@ -205,6 +205,10 @@ h2 {
 
 /* Profile Page */
 
+.addEventContainer {
+  text-align: center;
+}
+
 .addButton {
   margin-top: 20px;
   margin-left: 10px;
@@ -215,10 +219,17 @@ h2 {
   border-radius: 10px;
   padding: 20px;
 
-  input {
+  input, select {
     display: block;
-    margin: 10px;
+    margin: 10px 10px;
+    width: 40%;
   }
+}
+
+
+
+.input-group-btn {
+  padding: 0px;
 }
 
 .profileEvents {
@@ -231,11 +242,16 @@ h2 {
 
 .userEvent {
   text-align: center;
-  width: 49.9%;
+  width: 33.3%;
   min-height: 5%;
   display: inline-block;
   padding: 5px 20px;
 }
+
+.singleEvent {
+  margin: 0 30%;
+}
+
 
 /* single event page styling */
 

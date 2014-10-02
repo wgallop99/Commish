@@ -76,11 +76,7 @@ angular.module('firetestApp')
         templateUrl: 'views/games.html',
         controller: 'EventCtrl'
       })
-
-      .when('/game', {
-        templateUrl: 'views/game.html',
-        controller: 'EventCtrl'
-      })
+      
       .otherwise({redirectTo: '/'});
   }])
 

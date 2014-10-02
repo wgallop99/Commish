@@ -8,12 +8,16 @@
  * # userGames
  * Filter in the firetestApp.
  */
+// 
 // angular.module('firetestApp')
-//   .filter('userGames', function () {
+//   .filter('userGames', function ($scope) {
 //     return function (events) {
 //       var filteredList = [];
 //       for (var i = 0; i < events.length; i++) {
-//         if(profile.name === event.name){
+//         var userName = $scope.profile.name;
+//         var userGame = events[i].name;
+//
+//         if (userName === userGame) {
 //           filteredList.push(events[i]);
 //         }
 //       }

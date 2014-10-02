@@ -56,15 +56,20 @@
   </div>
 
   <!-- Add event section -->
-  <div class="col-lg-6 col-md-6 col-sm-12 row addEventContainer">
+  <div class="col-lg-8 col-md-8 col-sm-12 addEventContainer">
     <button ng-hide="create" ng-click="create=!create" class="button addButton">Create Event</button>
     <form ng-show="create" class="addForm form-group" ng-submit="addEvent(newEvent); newEvent = null;">
 
       <select class="form-control" ng-model="newEvent.icon" required>
         <option value="flaticon-basketball35">Basketball</option>
+        <option value="flaticon-mountain24">Bike</option>
         <option value="flaticon-rugby98">Football</option>
+        <option value="flaticon-man362">Frisbee</option>
+        <option value="flaticon-running30">Run</option>
         <option value="flaticon-soccer43">Soccer</option>
         <option value="flaticon-tennis18">Tennis</option>
+        <option value="flaticon-weightlift">Weightlifting</option>
+        <option value="flaticon-guru">Yoga</option>
       </select>
 
       <input class="form-control" placeholder="Game Description" ng-model="newEvent.type" required>
@@ -78,26 +83,61 @@
   <div class="col-lg-8 col-md-8 col-sm-12 row profileEvents">
 
 <!--     if no events created yet...needs to be ng-ifed  -->
-    <div class="userEvent" ng-show="profile.name === event.name" ng-repeat="event in events">
-      <select class="form-control" ng-model="event.icon">
-        <option value="flaticon-basketball35">Basketball</option>
-        <option value="flaticon-rugby98">Football</option>
-        <option value="flaticon-soccer43">Soccer</option>
-        <option value="flaticon-tennis18">Tennis</option>
-      </select>
-
-      <input class="form-control" placeholder="Game Description" ng-model="event.type">
-      <input class="form-control" type="datetime-local" ng-model="event.date" placeholder="When?">
-      <input class="form-control" type="text" ng-model="event.location" placeholder="Where?">
-<!--       <h3>{{event.type}}</h3>
-<i class="{{event.icon}} icon"></i>
-<p>{{event.date | date:"EEE, MMM d, y' at' h:mm a"}}</p>
-<p>{{event.location}}</p> -->
+    <div class="userEvent" ng-show="profile.name === event.name" ng-repeat="event in events | reverse">
+      <h3>{{event.type}}</h3>
+      <i class="{{event.icon}} icon"></i>
+      <p>{{event.date | date:"EEE, MMM d, y' at' h:mm a"}}</p>
+      <p>{{event.location}}</p>
   <!--   Might have to go to a separate page to edit event? -->
-      <button class="button" ng-click="events.$save(event)">Edit Event</button>
+      <button class="button" ng-click="getEvent(event.$id)" data-toggle="modal" data-target="#myModal">Edit Event</button>
       <button class="button" ng-click="events.$remove(event)">Delete</button>
     </div>
 
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="row singleEvent">
+          <form>
+            <select class="form-control" ng-model="singleEvent.icon" required>
+              <option value="flaticon-basketball35">Basketball</option>
+              <option value="flaticon-mountain24">Bike</option>
+              <option value="flaticon-rugby98">Football</option>
+              <option value="flaticon-man362">Frisbee</option>
+              <option value="flaticon-running30">Run</option>
+              <option value="flaticon-soccer43">Soccer</option>
+              <option value="flaticon-tennis18">Tennis</option>
+              <option value="flaticon-weightlift">Weightlifting</option>
+              <option value="flaticon-guru">Yoga</option>
+            </select>
+
+            <input class="form-control" placeholder="Game Description" ng-model="singleEvent.type">
+            <input class="form-control" type="datetime-local" ng-model="singleEvent.date" placeholder="When?">
+            <input class="form-control" type="text" ng-model="singleEvent.location" placeholder="Where?">
+            <button class="button" ng-click="events.$save(event.$id)">Update</button>
+          </form>
+
+          <!-- <button class="button">Sign Up</button> -->
+
+        </div>
+      </div>
+        <div class="modal-footer">
+          <div class="row teamContainer" ng-show="singleEvent.icon === 'flaticon-basketball35' || singleEvent.icon === 'flaticon-rugby98' || singleEvent.icon === 'flaticon-soccer43' || singleEvent.icon ==='flaticon-basketball35' || singleEvent.icon === 'flaticon-man362'">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xsm-5 team1"></div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xsm-2 center">
+              <button class="button randomize">Randomize</button>
+              <h1 class="versus">V</h1>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xsm-5 team2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>
