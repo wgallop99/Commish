@@ -11,15 +11,19 @@
 
 angular.module('firetestApp')
   .filter('oldGames', function () {
-    return function (events) {
-      var filteredList = [];
+  return function (events) {
+    if (events && events.length) {
+      var filtered = [];
+      var cutOffDate = moment().startOf('day').subtract(1, 'millisecond');
       for (var i = 0; i < events.length; i++) {
-        var current = new Date().getTime();
-        var lastModified = new Date(events[i].date).getTime();
-        if (current <= lastModified) {
-          filteredList.push(events[i]);
+        var evt = events[i];
+        if (cutOffDate.isBefore(evt.date)) {
+          filtered.push(evt);
         }
       }
-      return filteredList;
-    };
-  });
+      return filtered;
+    } else {
+      return events;
+    }
+  };
+});

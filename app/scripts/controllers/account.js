@@ -19,6 +19,7 @@ angular.module('firetestApp')
           icon: newEvent.icon,
           type: newEvent.type,
           date: newEvent.date,
+          time: newEvent.time,
           location: newEvent.location
       });
     };
@@ -89,5 +90,9 @@ angular.module('firetestApp')
       }
       fbutil.syncObject('users/'+user.uid).$bindTo($scope, 'profile');
     }
+
+    $scope.CollapseDemoCtrl = function(){
+      $scope.isCollapsed = true;
+    };
 
 });

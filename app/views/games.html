@@ -22,11 +22,11 @@
 </form>
 
 <div class="eventContainer container">
-  <div ng-repeat="event in events | filter:search:strict | reverse | oldGames">
+  <div ng-class-even="'evenClass'" ng-repeat="event in events | filter:search:strict | reverse | oldGames">
     <div class="eventLists row">
       <div class="col-lg-2 col-md-2 col-sm-12 eventIcon"><i class="{{event.icon}} icon"></i></div>
       <div class="col-lg-2 col-md-2 col-sm-12 eventDescription"><h1>{{event.type}}</h1></div>
-      <div class="col-lg-2 col-md-2 col-sm-12 eventDate">{{event.date | date:"MM/dd/yyyy' at' h:mm a"}}</div>
+      <div class="col-lg-2 col-md-2 col-sm-12 eventDate">{{event.date | date:"MM/dd/yyyy"}} at {{event.time}}</div>
       <div class="col-lg-2 col-md-2 col-sm-12 eventItem">{{event.location}}</div>
       <div class="col-lg-2 col-md-2 col-sm-12 eventUser">{{event.name}}</div>
       <div class="col-lg-2 col-md-2 col-sm-12 eventButton">

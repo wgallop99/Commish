@@ -11,7 +11,7 @@
       </form>
 
       <p>
-        <button role="button" ng-click="logout()" class="button">Log Out</button>
+        <button role="button" ng-click="logout()" class="button warning">Log Out</button>
       </p>
     </div>
 
@@ -72,9 +72,10 @@
         <option value="flaticon-guru">Yoga</option>
       </select>
 
-      <input class="form-control" placeholder="Game Description" ng-model="newEvent.type" required>
-      <input class="form-control" type="datetime-local" ng-model="newEvent.date" placeholder="When?" required>
-      <input class="form-control" type="text" ng-model="newEvent.location" placeholder="Where?" required>
+      <input maxlength="17" class="form-control" placeholder="Game Description" ng-model="newEvent.type" required>
+      <input maxlength="17"class="form-control" type="date" ng-model="newEvent.date" required>
+      <input maxlength="17"class="form-control" type="time" ng-model="newEvent.time" required>
+      <input maxlength="17" class="form-control" type="text" ng-model="newEvent.location" placeholder="Where?" required>
       <button class="button" type="submit" ng-click="create=!create">Add Event</button>
       <a class="button linkButton" ng-click="create=!create">Cancel</a>
     </form>
@@ -86,11 +87,12 @@
     <div class="userEvent" ng-show="profile.name === event.name" ng-repeat="event in events | reverse">
       <h3 class="eventTypeHeading">{{event.type}}</h3>
       <i class="{{event.icon}} icon"></i>
-      <p>{{event.date | date:"EEE, MMM d, y' at' h:mm a"}}</p>
+      <p>{{event.date | date:"EEE, MMM d, y"}}</p>
+      <p>{{event.time | date: "shortTime"}}</p>
       <p>{{event.location}}</p>
   <!--   Might have to go to a separate page to edit event? -->
       <button class="button" ng-click="getEvent(event.$id)" data-toggle="modal" data-target="#myModal">Edit Event</button>
-      <button class="button" ng-click="events.$remove(event)">Delete</button>
+      <button class="button warning" ng-click="events.$remove(event)">Delete</button>
     </div>
 
   </div>
@@ -117,8 +119,9 @@
             </select>
 
             <input class="form-control" placeholder="Game Description" ng-model="singleEvent.type">
-            <input class="form-control" type="datetime-local" ng-model="singleEvent.date" placeholder="When?">
-            <input class="form-control" type="text" ng-model="singleEvent.location" placeholder="Where?">
+            <input class="form-control" type="date" ng-model="singleEvent.date">
+            <input class="form-control" type="time" ng-model="singleEvent.time">
+            <input class="form-control" type="text" ng-model="singleEvent.location" placeholder="Location">
             <button class="button" ng-click="updateEvent(key, singleEvent)">Update</button>
           </form>
 

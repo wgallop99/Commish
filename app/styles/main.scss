@@ -11,6 +11,28 @@ body {
   color: white;
 }
 
+/* Side Nav Menu styling */
+
+.sideMenu {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+
+  .menuIcon {
+    font-size: 34px;
+  }
+}
+
+.nav {
+
+  li {
+    display: block;
+  }
+}
+
+
+
+/* done */
 
 p {
   color: white;
@@ -40,6 +62,8 @@ a {
   border-radius: 0px;
   border: 2px solid white;
   padding: 3px 5px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -73,10 +97,6 @@ a {
     padding: 0px;
     overflow: hidden;
   }
-}
-
-.header{
-  background-color: white;
 }
 
 .logo {
@@ -145,21 +165,20 @@ h2 {
 }
 
 .eventContainer {
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 300px;
   overflow: auto;
-  padding-top: 5px;
-  padding-left: 0px;
+  padding: 0px;
 
   .eventLists {
     list-style-type: none;
-    margin: 20px 5px;
+    padding: 11px 0px;
   }
 
-  .eventLists:first-child {
-    margin-top: 5px;
+  .row {
+    margin: 0px;
   }
 
   .eventIcon {
@@ -172,14 +191,13 @@ h2 {
     margin: 0px;
 
     h1 {
-      font-size: 17px;
+      font-size: 13px;
       margin: 0px;
     }
   }
 
   .eventItem {
     color: white;
-    margin: 5px 0px;
     font-size: 13px;
     margin: 0px;
   }
@@ -202,6 +220,10 @@ h2 {
     color: white;
     margin: 0px;
   }
+}
+
+.evenClass {
+  background-color: black;
 }
 
 /* Profile Page */
@@ -243,7 +265,6 @@ h2 {
 .userEvent {
   text-align: center;
   width: 33.3%;
-  min-height: 5%;
   display: inline-block;
   padding: 5px 20px;
   margin-top: 5px;
@@ -331,10 +352,11 @@ h2 {
     font-size: 126px;
   }
 
-  button {
+  a {
     font-size: 1em;
     padding: 10px 15px;
     margin-right: 5px;
+    text-decoration: none;
   }
 }
 

@@ -31,4 +31,8 @@ angular.module('firetestApp')
         console.log('Timer Stopped - data = ', data);
     });
 
+    $scope.CollapseDemoCtrl = function(){
+      $scope.isCollapsed = true;
+    };
+
   });

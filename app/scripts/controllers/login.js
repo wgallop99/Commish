@@ -52,4 +52,8 @@ angular.module('firetestApp')
       );
     }
 
+    $scope.CollapseDemoCtrl = function(){
+      $scope.isCollapsed = true;
+    };
+
   });
