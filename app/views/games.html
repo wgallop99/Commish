@@ -48,8 +48,7 @@
         <h1>{{singleEvent.type}}</h1>
         <h3>{{singleEvent.date | date:"MMM d, y' at' h:mm a"}}</h3>
         <h3>{{singleEvent.location}}</h3>
-
-        <button class="button">Sign Up</button>
+        <button class="button" ng-click="signUp(auth.user.email, singleEvent.$id)">Sign Up</button>
       </div>
     </div>
       <div class="modal-footer">
@@ -57,6 +56,9 @@
           <div class="col-lg-5 col-md-5 col-sm-5 col-xsm-5 team1"></div>
           <div class="col-lg-2 col-md-2 col-sm-2 col-xsm-2 center">
             <button class="button randomize">Randomize</button>
+            <div ng-repeat="player in singleEvent.players">
+              <p>{{player}}</p>
+            </div>
             <h1 class="versus">V</h1>
           </div>
           <div class="col-lg-5 col-md-5 col-sm-5 col-xsm-5 team2"></div>

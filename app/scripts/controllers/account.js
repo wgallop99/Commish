@@ -37,7 +37,7 @@ angular.module('firetestApp')
       ref.$save(data);
     };
 
-    $scope.user = user;
+    $scope.user = user
     $scope.logout = simpleLogin.logout;
     $scope.messages = [];
     loadProfile(user);

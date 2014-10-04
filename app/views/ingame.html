@@ -1,8 +1,47 @@
 
 <div class="inGameContainer">
-  <div class="timer">
-    <h3><timer autostart="false">{{hhours}}:{{mminutes}}:{{sseconds}}</timer></h3>
-    <a href="" class="button go" ng-click="startTimer()">Start</a>
-    <a href="" class="button warning" ng-click="stopTimer()" >Stop</a>
+  <div class="stopwatch">
+
+    <div class="controls"></div>
+      <input id="start" name="controls" type="radio" />
+      <input id="stop" name="controls" type="radio" />
+      <input id="reset" name="controls" type="radio" />
+
+    <div class="numberRow">
+
+      <div class="cell">
+        <div class="numbers tenhour moveten">0 1 2 3 4 5 6 7 8 9</div>
+      </div>
+      <div class="cell">
+        <div class="numbers hour moveten">0 1 2 3 4 5 6 7 8 9</div>
+      </div>
+      <div class="cell divider"><div class="numbers">:</div></div>
+      <div class="cell">
+        <div class="numbers tenminute movesix">0 1 2 3 4 5 6</div>
+      </div>
+      <div class="cell">
+        <div class="numbers minute moveten">0 1 2 3 4 5 6 7 8 9</div>
+      </div>
+      <div class="cell divider"><div class="numbers">:</div></div>
+      <div class="cell">
+        <div class="numbers tensecond movesix">0 1 2 3 4 5 6</div>
+      </div>
+      <div class="cell">
+        <div class="numbers second moveten">0 1 2 3 4 5 6 7 8 9</div>
+      </div>
+      <div class="cell divider"><div class="numbers">:</div></div>
+      <div class="cell">
+        <div class="numbers milisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+      </div>
+      <div class="cell">
+        <div class="numbers tenmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+      </div>
+    </div>
+    <!-- Lables for the controls -->
+    <div id="timer_controls">
+      <label class="button" for="start">Start</label>
+      <label class="button" for="stop">Stop</label>
+      <label class="button" for="reset">Reset</label>
+    </div>
   </div>
 </div>
