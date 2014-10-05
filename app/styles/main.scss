@@ -10,6 +10,10 @@ body {
   font-family: futura;
 }
 
+button {
+  outline: none;
+}
+
 /* Side Nav Menu styling */
 
 .sideMenu {
@@ -332,6 +336,12 @@ h2 {
 .inGameContainer {
   background-color: $main-background;
   border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+
+  h1 {
+    font-size: 4em;
+  }
 }
 
 .warning:hover {
@@ -362,7 +372,7 @@ h2 {
 .cell {
 	width: 0.60em;
 	height: 40px;
-	font-size: 20px;
+	font-size: 52px;
 	overflow: hidden;
 	position: relative;
   display: inline-block;
@@ -418,7 +428,98 @@ input[name="controls"] {display: none;}
 	100% {top: -240px;}
 }
 
+.sportsSelect {
+  width: 100px;
+  text-align: center;
+  display: inline-block;
+  margin-top: 20px;
+}
 
+/* scoreboard styling with each different sport*/
+
+.scoreboard {
+  position: relative;
+  border-top: 1px solid white;
+}
+
+.animate-switch-container {
+  position:relative;
+  height:300px;
+  overflow:hidden;
+  text-align: center;
+
+}
+
+.animate-switch {
+  padding: 0px 10px;
+}
+
+.animate-switch.ng-animate {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
+
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+.animate-switch.ng-leave.ng-leave-active,
+.animate-switch.ng-enter {
+  top:-1000px;
+}
+.animate-switch.ng-leave,
+.animate-switch.ng-enter.ng-enter-active {
+  top:0;
+}
+
+.team {
+  display: inline-block;
+  text-align: center;
+}
+
+.score {
+
+  p {
+    font-size: 12em;
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+.plus, .minus {
+  font-size: 4em;
+  text-decoration: none;
+  margin-right: 10px;
+  background-color: transparent;
+  border: none;
+  color: $main-color;
+}
+
+.bballScore {
+  font-size: 1em;
+  padding: 5px 15px;
+  margin-right: 10px;
+}
+
+.fballScore {
+  font-size: 1em;
+  padding: 5px 15px;
+  margin-right: 10px;
+}
+
+.plus:hover, .minus:hover {
+  color: #428bca;
+}
+
+.dash {
+  font-size: 9em;
+  position: absolute;
+  top: 47%;
+  left: 45.5%;
+  color: white;
+}
 
 
 /* Responsive: Portrait tablets and up */

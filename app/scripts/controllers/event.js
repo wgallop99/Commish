@@ -27,13 +27,15 @@
       console.log($rootScope.singleEvent);
     };
 
+    $scope.players = fbutil.syncArray('players');
+
     $scope.signUp = function (user, key) {
       console.log(user);
       console.log(key);
       // var ref = fbutil.ref('events');
       // ref.child($rootScope.currentUser.uid).child('messages').push(something);
       var ref = fbutil.ref('events/' + $rootScope.singleEventId);
-      ref.child('players').push(user);
+      ref.child('players').post(user);
     };
 
     $scope.CollapseDemoCtrl = function(){

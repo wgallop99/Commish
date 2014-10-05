@@ -1,5 +1,9 @@
 
 <div class="inGameContainer">
+
+  <h1>SCOREBOARD</h1>
+
+
   <div class="stopwatch">
 
     <div class="controls"></div>
@@ -37,11 +41,167 @@
         <div class="numbers tenmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
       </div>
     </div>
-    <!-- Lables for the controls -->
+
     <div id="timer_controls">
       <label class="button" for="start">Start</label>
       <label class="button" for="stop">Stop</label>
       <label class="button" for="reset">Reset</label>
     </div>
+  </div>
+
+<!-- Scoring for'Basketball','Baseball', 'Football', 'Frisbee', 'Soccer', 'Other' -->
+
+  <select class="sportsSelect form-control" ng-model="select" ng-options="item for item in items" ng-required></select>
+
+  <div class="scoreBoard">
+    <div class="animate-switch-container row" ng-switch on="select">
+
+
+      <div class="animate-switch" ng-switch-when="Basketball">
+        <div class="team col-lg-6 col-md-6 col-sm-6">
+          <div class="score">
+            <p>{{count1}}</p>
+          </div>
+          <button class="button bballScore" ng-click="count1 = count1 + 1" ng-init="count1=0">1</button>
+          <button class="button bballScore" ng-click="count1 = count1 + 2" ng-init="count1=0">2</button>
+          <button class="button bballScore" ng-click="count1 = count1 + 3" ng-init="count1=0">3</button>
+          <button class="button bballScore fa fa-minus" ng-show="count1 > 0" ng-click="count1 = count1 - 1" ng-init="count1=0"></button>
+        </div>
+
+        <div class="team col-lg-6 col-md-6 col-sm-6">
+          <div class="score">
+            <p>{{count2}}</p>
+          </div>
+          <button class="button bballScore" ng-click="count2 = count2 + 1" ng-init="count2=0">1</button>
+          <button class="button bballScore" ng-click="count2 = count2 + 2" ng-init="count2=0">2</button>
+          <button class="button bballScore" ng-click="count2 = count2 + 3" ng-init="count2=0">3</button>
+          <button class="button bballScore fa fa-minus" ng-show="count2 > 0" ng-click="count2 = count2 - 1" ng-init="count2=0"></button>
+        </div>
+      </div>
+
+
+      <div class="animate-switch" ng-switch-when="Baseball">
+        <div class="team col-lg-6 col-md-6 col-sm-6">
+          <div class="score">
+            <p>{{count1}}</p>
+          </div>
+          <button class="fa fa-plus-square plus" ng-click="count1 = count1 + 1" ng-init="count1=0"></button>
+          <button class="fa fa-minus-square minus" ng-show="count1 > 0" ng-click="count1 = count1 - 1" ng-init="count1=0"></button>
+        </div>
+
+        <div class="team col-lg-6 col-md-6 col-sm-6">
+          <div class="score">
+            <p>{{count2}}</p>
+          </div>
+          <button class="fa fa-plus-square plus" ng-click="count2 = count2 + 1" ng-init="count2=0"></button>
+          <button class="fa fa-minus-square minus" ng-show="count2 > 0" ng-click="count2 = count2 - 1" ng-init="count2=0"></button>
+        </div>
+
+      </div>
+
+      <div class="animate-switch" ng-switch-when="Football">
+
+        <div class="team col-lg-6 col-md-6 col-sm-6">
+          <div class="score">
+            <p>{{count1}}</p>
+          </div>
+          <button class="button fballScore" ng-click="count1 = count1 + 1" ng-init="count1=0">1</button>
+          <button class="button fballScore" ng-click="count1 = count1 + 6" ng-init="count1=0">Touchdown</button>
+          <button class="button fballScore" ng-click="count1 = count1 + 3" ng-init="count1=0">Field Goal</button>
+          <button class="button fballScore fa fa-minus" ng-show="count1 > 0" ng-click="count1 = count1 - 1" ng-init="count1=0"></button>
+        </div>
+
+        <div class="team col-lg-6 col-md-6 col-sm-6">
+          <div class="score">
+            <p>{{count2}}</p>
+          </div>
+          <button class="button fballScore" ng-click="count2 = count2 + 1" ng-init="count2=0">1</button>
+          <button class="button fballScore" ng-click="count2 = count2 + 6" ng-init="count2=0">Touchdown</button>
+          <button class="button fballScore" ng-click="count2 = count2 + 3" ng-init="count2=0">Field Goal</button>
+          <button class="button fballScore fa fa-minus" ng-show="count2 > 0" ng-click="count2 = count2 - 1" ng-init="count2=0"></button>
+        </div>
+
+      </div>
+
+      <div class="animate-switch" ng-switch-when="Frisbee">
+        <div class="team col-lg-6 col-md-6 col-sm-6">
+          <div class="score">
+            <p>{{count1}}</p>
+          </div>
+          <button class="fa fa-plus-square plus" ng-click="count1 = count1 + 1" ng-init="count1=0"></button>
+          <button class="fa fa-minus-square minus" ng-show="count1 > 0" ng-click="count1 = count1 - 1" ng-init="count1=0"></button>
+        </div>
+
+        <div class="team col-lg-6 col-md-6 col-sm-6">
+          <div class="score">
+            <p>{{count2}}</p>
+          </div>
+          <button class="fa fa-plus-square plus" ng-click="count2 = count2 + 1" ng-init="count2=0"></button>
+          <button class="fa fa-minus-square minus" ng-show="count2 > 0" ng-click="count2 = count2 - 1" ng-init="count2=0"></button>
+        </div>
+
+      </div>
+
+      <div class="animate-switch" ng-switch-when="Soccer">
+
+        <div class="team col-lg-6 col-md-6 col-sm-6">
+          <div class="score">
+            <p>{{count1}}</p>
+          </div>
+          <button class="fa fa-plus-square plus" ng-click="count1 = count1 + 1" ng-init="count1=0"></button>
+          <button class="fa fa-minus-square minus" ng-show="count1 > 0" ng-click="count1 = count1 - 1" ng-init="count1=0"></button>
+        </div>
+
+        <div class="team col-lg-6 col-md-6 col-sm-6">
+          <div class="score">
+            <p>{{count2}}</p>
+          </div>
+          <button class="fa fa-plus-square plus" ng-click="count2 = count2 + 1" ng-init="count2=0"></button>
+          <button class="fa fa-minus-square minus" ng-show="count2 > 0" ng-click="count2 = count2 - 1" ng-init="count2=0"></button>
+        </div>
+      </div>
+
+      <div class="animate-switch" ng-switch-when="Other">
+        <div class="team col-lg-6 col-md-6 col-sm-6">
+          <div class="score">
+            <p>{{count1}}</p>
+          </div>
+          <button class="fa fa-plus-square plus" ng-click="count1 = count1 + 1" ng-init="count1=0"></button>
+          <button class="fa fa-minus-square minus" ng-show="count1 > 0" ng-click="count1 = count1 - 1" ng-init="count1=0"></button>
+        </div>
+
+        <div class="team col-lg-6 col-md-6 col-sm-6">
+          <div class="score">
+            <p>{{count2}}</p>
+          </div>
+          <button class="fa fa-plus-square plus" ng-click="count2 = count2 + 1" ng-init="count2=0"></button>
+          <button class="fa fa-minus-square minus" ng-show="count2 > 0" ng-click="count2 = count2 - 1" ng-init="count2=0"></button>
+        </div>
+      </div>
+      <div class="animate-switch" ng-switch-default>
+
+        <div class="team col-lg-6 col-md-6 col-sm-6">
+          <div class="score">
+            <p>{{count1}}</p>
+          </div>
+          <button class="fa fa-plus-square plus" ng-click="count1 = count1 + 1" ng-init="count1=0"></button>
+          <button class="fa fa-minus-square minus" ng-show="count1 > 0" ng-click="count1 = count1 - 1" ng-init="count1=0"></button>
+        </div>
+
+        <div class="team col-lg-6 col-md-6 col-sm-6">
+          <div class="score">
+            <p>{{count2}}</p>
+          </div>
+          <button class="fa fa-plus-square plus" ng-click="count2 = count2 + 1" ng-init="count2=0"></button>
+          <button class="fa fa-minus-square minus" ng-show="count2 > 0" ng-click="count2 = count2 - 1" ng-init="count2=0"></button>
+        </div>
+
+      </div>
+    </div>
+
+    <button type="submit" class="button">Save Score</button>
+
+    <div class="fa fa-minus dash"></div>
+
   </div>
 </div>

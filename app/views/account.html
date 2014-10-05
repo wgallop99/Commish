@@ -61,6 +61,7 @@
     <form ng-show="create" class="addForm form-group" ng-submit="addEvent(newEvent); newEvent = null;">
 
       <select class="form-control" ng-model="newEvent.icon" required>
+        <option value="glyphicon glyphicon-baseball">Baseball</option>
         <option value="flaticon-basketball35">Basketball</option>
         <option value="flaticon-mountain24">Bike</option>
         <option value="flaticon-rugby98">Football</option>
@@ -81,8 +82,7 @@
     </form>
   </div>
 
-  <div class="col-lg-8 col-md-8 col-sm-12 row profileEvents">
-
+  <div class="col-lg-8 col-md-8 col-sm-12 profileEvents">
 <!--     if no events created yet...needs to be ng-ifed  -->
     <div class="userEvent" ng-show="profile.name === event.name" ng-repeat="event in events | reverse">
       <h3 class="eventTypeHeading">{{event.type}}</h3>

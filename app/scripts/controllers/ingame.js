@@ -9,27 +9,11 @@
  */
 angular.module('firetestApp')
   .controller('IngameCtrl', function ($scope) {
-    $scope.timerRunning = true;
 
-    $scope.startTimer = function (){
-        $scope.$broadcast('timer-start');
-        $scope.timerRunning = true;
-    };
+    $scope.items = ['Sport','Basketball','Baseball', 'Football', 'Frisbee', 'Soccer', 'Other'];
 
-    $scope.stopTimer = function (){
-        $scope.$broadcast('timer-stop');
-        $scope.timerRunning = false;
-    };
+    $scope.select = $scope.items[0];
 
-    $scope.resume = function (){
-        $scope.$broadcast('timer-resume');
-        $scope.timerRunning = true;
-    };
-
-
-    $scope.$on('timer-stopped', function (event, data){
-        console.log('Timer Stopped - data = ', data);
-    });
 
     $scope.CollapseDemoCtrl = function(){
       $scope.isCollapsed = true;
