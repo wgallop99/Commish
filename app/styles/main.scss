@@ -6,8 +6,18 @@ $main-background: rgba(0, 0, 0, 0.5);
 
 body {
   padding: 0px;
-  margin: 0px;
+  margin: 40px 0px 0px 0px;
   font-family: futura;
+}
+
+header {
+  background-color: black;
+  padding: 10px 0px 5px 30px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 2;
 }
 
 button {
@@ -17,9 +27,6 @@ button {
 /* Side Nav Menu styling */
 
 .sideMenu {
-  position: absolute;
-  top: 30px;
-  left: 30px;
 
   .menuIcon {
     font-size: 34px;
@@ -32,10 +39,12 @@ button {
 
   li {
     display: block;
-    margin: 5px 0px;
+    margin: 10px 0px;
     padding: 0px;
     a {
       padding: 0px;
+      border-bottom: 1px solid grey;
+      display: inline-block;
     }
   }
 }
@@ -245,10 +254,6 @@ h2 {
 
 /* Profile Page */
 
-.addEventContainer {
-  text-align: center;
-}
-
 .addButton {
   margin-top: 20px;
   margin-left: 10px;
@@ -279,7 +284,7 @@ h2 {
   background-color: $main-background;
   border-radius: 10px;
   max-height: 225px;
-  margin: 10px;
+  margin: 15px 0px;
   padding: 10px 0px;
   overflow: auto;
 }
@@ -288,7 +293,7 @@ h2 {
   text-align: center;
   display: inline-block;
   padding: 5px;
-  margin-top: 5px;
+  margin: 5px 10px 5px 5px;
   width: 179px;
 }
 
@@ -312,6 +317,10 @@ h2 {
 
 .addFormContent {
   text-align: center;
+}
+
+.auth {
+  display: inline-block;
 }
 
 
@@ -565,7 +574,7 @@ input[name="controls"] {display: none;}
 .dash {
   font-size: 9em;
   position: absolute;
-  top: 47%;
+  top: 52%;
   left: 45.5%;
   color: white;
 }

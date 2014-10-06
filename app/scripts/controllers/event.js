@@ -5,6 +5,14 @@
   .controller('EventCtrl', ['$rootScope','$scope', 'fbutil',
     function ($rootScope, $scope, fbutil) {
 
+    $scope.combine = function(date,time) {
+      if (date && time) {
+        return date + ' ' + time;
+        } else {
+          return "";
+        }
+    };
+
     $scope.events = fbutil.syncArray('events');
 
     $scope.addEvent = function(newEvent) {

@@ -42,25 +42,29 @@
       </div>
     </div>
 
-    <div class="sideMenu" ng-controller="MainCtrl">
-      <div class="fixClick" ng-controller="CollapseDemoCtrl">
-        <a href="" ng-click="isCollapsed = !isCollapsed"><i class="fa fa-bars menuIcon"></i></a>
-        <div collapse="isCollapsed">
-          <div>
-            <ul class="nav">
-              <li><a ng-click="isCollapsed = !isCollapsed" ng-href="#">Home</a></li>
-            <!--   angularfire -->
-              <li><a ng-click="isCollapsed = !isCollapsed" ng-href="#/games">Games</a></li>
-              <li><a ng-click="isCollapsed = !isCollapsed" ng-href="#/inGame">In Game</a></li>
-              <li ng-click="isCollapsed = !isCollapsed">
-                <a ng-hide-auth="" href="#/login">Log In</a>
-                <a ng-show-auth="" href="#/account">Account</a>
-              </li>
-            </ul>
+    <header>
+      <div class="sideMenu" ng-controller="MainCtrl">
+        <div class="fixClick" ng-controller="CollapseDemoCtrl">
+          <a href="" ng-click="isCollapsed = !isCollapsed"><i class="fa fa-bars menuIcon"></i></a>
+          <div collapse="isCollapsed">
+            <div>
+              <ul class="nav">
+                <li><a ng-click="isCollapsed = !isCollapsed" ng-href="#">Home</a></li>
+              <!--   angularfire -->
+                <li><a ng-click="isCollapsed = !isCollapsed" ng-href="#/games">Games</a></li>
+                <li><a ng-click="isCollapsed = !isCollapsed" ng-href="#/inGame">In Game</a></li>
+                <li ng-click="isCollapsed = !isCollapsed">
+                  <a ng-hide-auth="" href="#/login">Log In</a>
+                  <a ng-show-auth="" href="#/account">Account</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </header>
+
+
     <div class="container" ng-view=""></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

@@ -1,6 +1,36 @@
 <div class="row-fluid">
-  <div class="col-lg-4 col-md-4 col-sm-12 row">
-    <div class="{{user.provider === 'password'? 'col-md-12' : 'col-md-12'}}">
+
+
+  <!-- Add event section -->
+  <div class="col-lg-8 col-md-8 col-sm-12 addEventContainer">
+    <button data-toggle="modal" data-target="#myModal" class="button addButton">Create Event</button>
+  </div>
+
+  <div class="col-lg-12 col-md-12 col-sm-12 ">
+    <div class="profileEvents">
+  <!--     if no events created yet...needs to be ng-ifed  -->
+      <div class="userEvent" ng-show="profile.name === event.name" ng-repeat="event in events | reverse">
+        <h3 class="eventTypeHeading">{{event.type}}</h3>
+        <i class="{{event.icon}} icon"></i>
+        <input type="date" ng-model="event.date" class="form-control">
+        <input type="time" ng-model="event.time" class="form-control">
+        <p>{{event.location}}</p>
+    <!--   Might have to go to a separate page to edit event? -->
+        <button class="button" ng-click="events.$save(event)">Edit Event</button>
+        <button class="button warning" ng-click="events.$remove(event)">Delete</button>
+      </div>
+
+    </div>
+
+<!--     <div class="profileEvents">
+  <div>
+
+  </div> -->
+    </div>
+  </div>
+
+  <div class="row col-lg-12 col-md-12 col-sm-12">
+    <div class="{{user.provider === 'password'? 'col-md-2' : 'col-md-2'}}">
       <h3>Profile</h3>
 
       <form role="form">
@@ -15,7 +45,7 @@
       </p>
     </div>
 
-    <div class="col-md-12" ng-show="{{user.provider === 'password'}}">
+    <div class="auth col-lg-5 col-md-5 col-sm-12" ng-show="{{user.provider === 'password'}}">
     <form role="form">
       <h3>Change Password</h3>
 
@@ -38,7 +68,7 @@
     </form>
     </div>
 
-    <div class="col-md-12" ng-show="{{user.provider === 'password'}}">
+    <div class="auth col-lg-5 col-md-5 col-sm-12" ng-show="{{user.provider === 'password'}}">
     <form>
       <h3>Change Email</h3>
 
@@ -52,34 +82,6 @@
 
       <button class="button" ng-click="changeEmail(pass, newEmail)">Update Email</button>
     </form>
-    </div>
-  </div>
-
-  <!-- Add event section -->
-  <div class="col-lg-8 col-md-8 col-sm-12 addEventContainer">
-    <button data-toggle="modal" data-target="#myModal" class="button addButton">Create Event</button>
-  </div>
-
-  <div class="col-lg-8 col-md-8 col-sm-12 ">
-    <div class="profileEvents">
-  <!--     if no events created yet...needs to be ng-ifed  -->
-      <div class="userEvent" ng-show="profile.name === event.name" ng-repeat="event in events | reverse">
-        <h3 class="eventTypeHeading">{{event.type}}</h3>
-        <i class="{{event.icon}} icon"></i>
-        <input type="date" ng-model="event.date" class="form-control">
-        <input type="time" ng-model="event.time" class="form-control">
-        <p>{{event.location}}</p>
-    <!--   Might have to go to a separate page to edit event? -->
-        <button class="button" ng-click="events.$save(event)">Edit Event</button>
-        <button class="button warning" ng-click="events.$remove(event)">Delete</button>
-      </div>
-
-    </div>
-
-    <div class="profileEvents">
-      <div>
-
-      </div>
     </div>
   </div>
 
