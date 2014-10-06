@@ -27,9 +27,16 @@ button {
 }
 
 .nav {
+  margin: 0px;
+  padding: 0px;
 
   li {
     display: block;
+    margin: 5px 0px;
+    padding: 0px;
+    a {
+      padding: 0px;
+    }
   }
 }
 
@@ -219,6 +226,23 @@ h2 {
   background-color: black;
 }
 
+.fa-times {
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.fa-times:hover {
+  color: red;
+}
+
+.fa-remove {
+  color: white;
+}
+
+.fa-remove:hover {
+  color: red;
+}
+
 /* Profile Page */
 
 .addEventContainer {
@@ -228,6 +252,11 @@ h2 {
 .addButton {
   margin-top: 20px;
   margin-left: 10px;
+  padding: 10px 20px;
+  color: $main-color;
+  border-color: $main-color;
+  font-size: 1em;
+  font-weight: bold;
 }
 
 .addForm {
@@ -237,7 +266,7 @@ h2 {
 
   input, select {
     display: block;
-    margin: 10px 10px;
+    margin: 10px 30%;
     width: 40%;
   }
 }
@@ -257,25 +286,43 @@ h2 {
 
 .userEvent {
   text-align: center;
-  width: 33.3%;
   display: inline-block;
-  padding: 5px 20px;
+  padding: 5px;
   margin-top: 5px;
+  width: 179px;
 }
 
 .singleEvent {
-  margin: 0 30%;
+  margin: 0;
+
+  h1 {
+    font-size: 3em;
+    margin: 5px;
+  }
+
+  h3 {
+    font-size: 1em;
+    margin: 5px;
+  }
 }
 
 .eventTypeHeading {
   margin: 0px;
 }
 
+.addFormContent {
+  text-align: center;
+}
+
 
 /* single event page styling */
 
 .modal-dialog {
-  width: 68%;
+  width: 50%;
+}
+
+.addFormDialog {
+  width: 45%;
 }
 
 .modal-content {
@@ -284,9 +331,10 @@ h2 {
 }
 
 .team1, .team2 {
-  background-color: $main-background;
   height: 200px;
   border-radius: 10px;
+  text-align: center;
+  overflow: auto;
 }
 
 .versus {
@@ -295,6 +343,7 @@ h2 {
 
 .center {
   text-align: center;
+  padding: 0px;
 }
 
 .inGameContainer {
@@ -520,6 +569,12 @@ input[name="controls"] {display: none;}
   left: 45.5%;
   color: white;
 }
+
+.hide {
+  display: none;
+}
+
+
 
 
 /* Responsive: Portrait tablets and up */

@@ -2,8 +2,8 @@
 
 
  angular.module('firetestApp')
-  .controller('EventCtrl', ['$rootScope','$scope', 'fbutil','Firebase','$firebase', '$log','$location',
-    function ($rootScope, $scope, fbutil, Firebase,$firebase, $log, $location) {
+  .controller('EventCtrl', ['$rootScope','$scope', 'fbutil',
+    function ($rootScope, $scope, fbutil) {
 
     $scope.events = fbutil.syncArray('events');
 
@@ -27,15 +27,19 @@
       console.log($rootScope.singleEvent);
     };
 
-    $scope.players = fbutil.syncArray('players');
+    // $scope.players = fbutil.ref('events/' + $rootScope.singleEventId).syncArray('players');
 
     $scope.signUp = function (user, key) {
       console.log(user);
-      console.log(key);
-      // var ref = fbutil.ref('events');
-      // ref.child($rootScope.currentUser.uid).child('messages').push(something);
+      console.log($rootScope.singleEventId);
+
       var ref = fbutil.ref('events/' + $rootScope.singleEventId);
-      ref.child('players').post(user);
+      ref.child('players').push(user);
+    };
+
+    $scope.deletePlayer = function (user, key) {
+      var ref = fbutil.ref('events/' + $rootScope.singleEventId);
+      ref.child('players').delete(user);
     };
 
     $scope.CollapseDemoCtrl = function(){

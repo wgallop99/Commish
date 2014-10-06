@@ -57,91 +57,63 @@
 
   <!-- Add event section -->
   <div class="col-lg-8 col-md-8 col-sm-12 addEventContainer">
-    <button ng-hide="create" ng-click="create=!create" class="button addButton">Create Event</button>
-    <form ng-show="create" class="addForm form-group" ng-submit="addEvent(newEvent); newEvent = null;">
-
-      <select class="form-control" ng-model="newEvent.icon" required>
-        <option value="glyphicon glyphicon-baseball">Baseball</option>
-        <option value="flaticon-basketball35">Basketball</option>
-        <option value="flaticon-mountain24">Bike</option>
-        <option value="flaticon-rugby98">Football</option>
-        <option value="flaticon-man362">Frisbee</option>
-        <option value="flaticon-running30">Run</option>
-        <option value="flaticon-soccer43">Soccer</option>
-        <option value="flaticon-tennis18">Tennis</option>
-        <option value="flaticon-weightlift">Weightlifting</option>
-        <option value="flaticon-guru">Yoga</option>
-      </select>
-
-      <input maxlength="17" class="form-control" placeholder="Game Description" ng-model="newEvent.type" required>
-      <input maxlength="17"class="form-control" type="date" ng-model="newEvent.date" required>
-      <input maxlength="17"class="form-control" type="time" ng-model="newEvent.time" required>
-      <input maxlength="17" class="form-control" type="text" ng-model="newEvent.location" placeholder="Where?" required>
-      <button class="button" type="submit" ng-click="create=!create">Add Event</button>
-      <a class="button linkButton" ng-click="create=!create">Cancel</a>
-    </form>
+    <button data-toggle="modal" data-target="#myModal" class="button addButton">Create Event</button>
   </div>
 
-  <div class="col-lg-8 col-md-8 col-sm-12 profileEvents">
-<!--     if no events created yet...needs to be ng-ifed  -->
-    <div class="userEvent" ng-show="profile.name === event.name" ng-repeat="event in events | reverse">
-      <h3 class="eventTypeHeading">{{event.type}}</h3>
-      <i class="{{event.icon}} icon"></i>
-      <p>{{event.date | date:"EEE, MMM d, y"}}</p>
-      <p>{{event.time | date: "shortTime"}}</p>
-      <p>{{event.location}}</p>
-  <!--   Might have to go to a separate page to edit event? -->
-      <button class="button" ng-click="getEvent(event.$id)" data-toggle="modal" data-target="#myModal">Edit Event</button>
-      <button class="button warning" ng-click="events.$remove(event)">Delete</button>
+  <div class="col-lg-8 col-md-8 col-sm-12 ">
+    <div class="profileEvents">
+  <!--     if no events created yet...needs to be ng-ifed  -->
+      <div class="userEvent" ng-show="profile.name === event.name" ng-repeat="event in events | reverse">
+        <h3 class="eventTypeHeading">{{event.type}}</h3>
+        <i class="{{event.icon}} icon"></i>
+        <input type="date" ng-model="event.date" class="form-control">
+        <input type="time" ng-model="event.time" class="form-control">
+        <p>{{event.location}}</p>
+    <!--   Might have to go to a separate page to edit event? -->
+        <button class="button" ng-click="events.$save(event)">Edit Event</button>
+        <button class="button warning" ng-click="events.$remove(event)">Delete</button>
+      </div>
+
     </div>
 
-  </div>
+    <div class="profileEvents">
+      <div>
 
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-      </div>
-      <div class="modal-body">
-        <div class="row singleEvent">
-          <form>
-            <select class="form-control" ng-model="singleEvent.icon" required>
-              <option value="flaticon-basketball35">Basketball</option>
-              <option value="flaticon-mountain24">Bike</option>
-              <option value="flaticon-rugby98">Football</option>
-              <option value="flaticon-man362">Frisbee</option>
-              <option value="flaticon-running30">Run</option>
-              <option value="flaticon-soccer43">Soccer</option>
-              <option value="flaticon-tennis18">Tennis</option>
-              <option value="flaticon-weightlift">Weightlifting</option>
-              <option value="flaticon-guru">Yoga</option>
-            </select>
-
-            <input class="form-control" placeholder="Game Description" ng-model="singleEvent.type">
-            <input class="form-control" type="date" ng-model="singleEvent.date">
-            <input class="form-control" type="time" ng-model="singleEvent.time">
-            <input class="form-control" type="text" ng-model="singleEvent.location" placeholder="Location">
-            <button class="button" ng-click="updateEvent(key, singleEvent)">Update</button>
-          </form>
-
-          <!-- <button class="button">Sign Up</button> -->
-
-        </div>
-      </div>
-        <div class="modal-footer">
-
-          <div class="row teamContainer" ng-show="singleEvent.icon === 'flaticon-basketball35' || singleEvent.icon === 'flaticon-rugby98' || singleEvent.icon === 'flaticon-soccer43' || singleEvent.icon ==='flaticon-basketball35' || singleEvent.icon === 'flaticon-man362'">
-            <div class="col-lg-5 col-md-5 col-sm-5 col-xsm-5 team1"></div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xsm-2 center">
-              <button class="button randomize">Randomize</button>
-              <h1 class="versus">V</h1>
-            </div>
-            <div class="col-lg-5 col-md-5 col-sm-5 col-xsm-5 team2"></div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
 
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog addFormDialog">
+  <div class="modal-content addFormContent">
+    <div class="modal-body">
+        <h1>Create Your Game</h1>
+        <form class="addForm form-group" ng-submit="addEvent(newEvent); newEvent = null;">
+
+          <select class="form-control" ng-model="newEvent.icon" required>
+            <option value="glyphicon glyphicon-baseball">Baseball</option>
+            <option value="flaticon-basketball35">Basketball</option>
+            <option value="flaticon-mountain24">Bike</option>
+            <option value="flaticon-rugby98">Football</option>
+            <option value="flaticon-man362">Frisbee</option>
+            <option value="flaticon-running30">Run</option>
+            <option value="flaticon-soccer43">Soccer</option>
+            <option value="flaticon-tennis18">Tennis</option>
+            <option value="flaticon-weightlift">Weightlifting</option>
+            <option value="flaticon-guru">Yoga</option>
+          </select>
+
+          <input maxlength="17" class="form-control" placeholder="Game Description" ng-model="newEvent.type" required>
+          <input maxlength="17"class="form-control" type="date" ng-model="newEvent.date" required>
+          <input maxlength="17"class="form-control" type="time" ng-model="newEvent.time" required>
+          <input maxlength="17" class="form-control" type="text" ng-model="newEvent.location" placeholder="Where?" required>
+          <button class="button" type="submit" class="close">Add Event</button>
+          <a class="button linkButton" class="close" data-dismiss="modal">Cancel</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
