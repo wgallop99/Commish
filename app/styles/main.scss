@@ -282,6 +282,10 @@ h2 {
 
 /* Profile Page */
 
+.addEventContainer {
+  text-align: center;
+}
+
 .addButton {
   margin-top: 20px;
   margin-left: 10px;
@@ -315,14 +319,16 @@ h2 {
   margin: 15px 0px;
   padding: 10px 0px;
   overflow: auto;
+  max-width: 830px;
 }
 
 .userEvent {
   text-align: center;
   display: inline-block;
   padding: 5px;
-  margin: 5px 10px 5px 5px;
-  width: 179px;
+  margin: 5px 10px 5px 10px;
+  width: 187px;
+
 }
 
 .singleEvent {
@@ -563,6 +569,7 @@ input[name="hiddenButtons"] {
   overflow:hidden;
   text-align: center;
   margin-bottom: 20px;
+  height: 295px;
 }
 
 .switch {

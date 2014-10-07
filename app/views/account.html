@@ -2,11 +2,11 @@
 
 
   <!-- Add event section -->
-  <div class="col-lg-8 col-md-8 col-sm-12 addEventContainer">
+  <div class="col-lg-12 col-md-12 col-sm-12 addEventContainer">
     <button data-toggle="modal" data-target="#myModal" class="button addButton">Create Event</button>
   </div>
 
-  <div class="col-lg-12 col-md-12 col-sm-12 ">
+  <div class="col-lg-12 col-md-12 col-sm-12 profileEventContainer">
     <div class="profileEvents">
   <!--     if no events created yet...needs to be ng-ifed  -->
       <div class="userEvent" ng-show="profile.name === event.name" ng-repeat="event in events | reverse">
