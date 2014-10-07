@@ -62,6 +62,17 @@
           </div>
         </div>
       </div>
+
+      <ul class="navFull">
+        <li><a ng-href="#">Home</a></li>
+      <!--   angularfire -->
+        <li><a ng-href="#/games">Games</a></li>
+        <li><a ng-href="#/inGame">In Game</a></li>
+        <li>
+          <a ng-hide-auth="" href="#/login">Log In</a>
+          <a ng-show-auth="" href="#/account">Account</a>
+        </li>
+      </ul>
     </header>
 
 

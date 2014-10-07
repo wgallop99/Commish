@@ -16,9 +16,9 @@
     <option value="flaticon-sportive36">Other</option>
   </select>
 
-  <input class="form-control" type="text" ng-model="search.type" placeholder="Search Titles" >
-  <input class="form-control" type="date" ng-model="search.date">
-  <input class="form-control" type="text" ng-model="search.location" placeholder="Search Locations">
+  <input class="form-control searchType" type="text" ng-model="search.type" placeholder="Search Titles" >
+  <input class="form-control searchDate" type="date" ng-model="search.date">
+  <input class="form-control searchLocale" type="text" ng-model="search.location" placeholder="Search Locations">
 </form>
 
 <div class="eventContainer container">
@@ -56,12 +56,14 @@
           <div class="col-lg-5 col-md-5 col-sm-5 col-xsm-5 team1">
             <div ng-class-odd="'hide'" ng-repeat="player in singleEvent.players">
               <a href="mailto:{{player}}">{{player}}</a>
-              <i class="fa fa-remove"></i>
+              <i ng-if="player == auth.user.email" class="fa fa-remove"></i>
             </div>
           </div>
           <div class="col-lg-2 col-md-2 col-sm-2 col-xsm-2 center">
-            <button class="button randomize">Randomize</button>
+
             <h1 class="versus">V</h1>
+            <button class="button randomize">Randomize</button>
+
           </div>
           <div class="col-lg-5 col-md-5 col-sm-5 col-xsm-5 team2">
             <div ng-class-even="'hide'" ng-repeat="player in singleEvent.players">

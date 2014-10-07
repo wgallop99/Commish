@@ -27,9 +27,25 @@ button {
 /* Side Nav Menu styling */
 
 .sideMenu {
+  display: none;
 
   .menuIcon {
     font-size: 34px;
+  }
+}
+
+.navFull {
+  li {
+    display: inline-block;
+    margin-right: 20px;
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      border-bottom: 2px solid grey;
+    }
   }
 }
 
@@ -159,7 +175,7 @@ h3 {
   }
 }
 
-/*List of events on event page */
+/*List of games */
 
 h2 {
   text-align: center;
@@ -171,6 +187,18 @@ h2 {
 
 .eventSearch {
   text-align: center;
+}
+
+.searchType {
+  width: 50px;
+}
+
+.searchDate {
+  width: 50px;
+}
+
+.searchLocale {
+  width: 50px;
 }
 
 .eventContainer {
@@ -348,6 +376,7 @@ h2 {
 
 .versus {
   font-size: 8em;
+  margin-top: 0px;
 }
 
 .center {
@@ -427,7 +456,7 @@ h2 {
   text-align: center;
 }
 
-.cell {
+.number {
 	width: 0.60em;
 	height: 40px;
 	font-size: 52px;
@@ -436,7 +465,7 @@ h2 {
   display: inline-block;
 }
 
-.numbers {
+.numberList {
 	width: 0.6em;
 	line-height: 40px;
 	font-family: digital, arial, verdana;
@@ -447,43 +476,72 @@ h2 {
 	left: 0;
 }
 
-input[name="controls"] {display: none;}
+input[name="hiddenButtons"] {
+  display: none;
+}
 
-#stop:checked~.numberRow .numbers {animation-play-state: paused;}
-#start:checked~.numberRow .numbers {animation-play-state: running;}
-#reset:checked~.numberRow .numbers {animation: none;}
+#stop:checked~.numberRow .numberList {
+  animation-play-state: paused;
+}
 
-.moveten {
-	animation: moveten 1s steps(10, end) infinite;
+#start:checked~.numberRow .numberList {
+  animation-play-state: running;
+}
+
+#reset:checked~.numberRow .numberList {
+  animation: none;
+}
+
+.tenCount {
+	animation: tenCount 1s steps(10, end) infinite;
 	animation-play-state: paused;
 }
-.movesix {
-	animation: movesix 1s steps(6, end) infinite;
+
+@keyframes tenCount {
+  0% {top: 0;}
+  100% {top: -400px;}
+}
+
+.sixCount {
+	animation: sixCount 1s steps(6, end) infinite;
 	animation-play-state: paused;
 }
 
-.second {animation-duration: 10s;}
-.tensecond {animation-duration: 60s;}
-
-.milisecond {animation-duration: 1s;}
-.tenmilisecond {animation-duration: 0.1s;}
-.hundredmilisecond {animation-duration: 0.01s;}
-
-.minute {animation-duration: 600s;}
-.tenminute {animation-duration: 3600s;}
-
-.hour {animation-duration: 36000s;}
-.tenhour {animation-duration: 360000s;}
-
-
-@keyframes moveten {
-	0% {top: 0;}
-	100% {top: -400px;}
+@keyframes sixCount {
+  0% {top: 0;}
+  100% {top: -240px;}
 }
 
-@keyframes movesix {
-	0% {top: 0;}
-	100% {top: -240px;}
+.second {
+  animation-duration: 10s;
+}
+
+.tensecond {
+  animation-duration: 60s;
+}
+
+.tenmilisecond {
+  animation-duration: 0.1s;
+}
+
+.hundredmilisecond {
+  animation-duration: 0.01s;
+}
+
+.minute {
+  animation-duration: 600s;
+}
+
+.tenminute {
+  animation-duration: 3600s;
+}
+
+.hour {
+  animation-duration: 36000s;
+}
+
+.tenhour {
+  animation-duration: 360000s;
 }
 
 .sportsSelect {
@@ -500,19 +558,18 @@ input[name="controls"] {display: none;}
   border-top: 1px solid white;
 }
 
-.animate-switch-container {
+.switch-container {
   position:relative;
-  height:300px;
   overflow:hidden;
   text-align: center;
-
+  margin-bottom: 20px;
 }
 
-.animate-switch {
+.switch {
   padding: 0px 10px;
 }
 
-.animate-switch.ng-animate {
+.switch.ng-animate {
   -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
   transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s;
 
@@ -523,12 +580,10 @@ input[name="controls"] {display: none;}
   bottom:0;
 }
 
-.animate-switch.ng-leave.ng-leave-active,
-.animate-switch.ng-enter {
+.switch.ng-leave.ng-leave-active, .switch.ng-enter {
   top:-1000px;
 }
-.animate-switch.ng-leave,
-.animate-switch.ng-enter.ng-enter-active {
+.switch.ng-leave, .switch.ng-enter.ng-enter-active {
   top:0;
 }
 
@@ -587,8 +642,25 @@ input[name="controls"] {display: none;}
 
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 100%;
-  }
+@media screen and (max-width: 768px) {
+/*   .container {
+  max-width: 100%;
+} */
+
+.dash {
+  display: none;
+}
+
+.sideMenu {
+  display: block;
+}
+
+.navFull {
+  display: none;
+}
+
+.score p {
+  font-size: 7em;
+  margin: 0px 20px;
+}
 }
