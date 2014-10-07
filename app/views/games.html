@@ -48,15 +48,15 @@
         <h1>{{singleEvent.type}}</h1>
         <h3>{{singleEvent.date | date:"MMM d, y"}} at {{ combine(singleEvent.date, singleEvent.time) | amDateFormat: 'h:mm a'}}</h3>
         <h3>{{singleEvent.location}}</h3>
-        <button class="button" ng-click="signUp(auth.user.email, singleEvent.$id)">Sign Up</button>
+        <button class="button" ng-show="added" ng-click="signUp(auth.user.email, singleEvent.$id)">Sign Up</button>
       </div>
     </div>
       <div class="modal-footer">
         <div class="row teamContainer" ng-show="singleEvent.icon === 'flaticon-basketball35' || singleEvent.icon === 'flaticon-rugby98' || singleEvent.icon === 'flaticon-soccer43' || singleEvent.icon ==='flaticon-basketball35' || singleEvent.icon === 'flaticon-man362'">
           <div class="col-lg-5 col-md-5 col-sm-5 col-xsm-5 team1">
-            <div ng-class-odd="'hide'" ng-repeat="player in singleEvent.players">
+            <div ng-class-odd="'hide'" ng-repeat="(key, player) in singleEvent.players">
               <a href="mailto:{{player}}">{{player}}</a>
-              <i ng-if="player == auth.user.email" class="fa fa-remove"></i>
+              <i ng-if="player == auth.user.email" class="fa fa-remove" ng-click="deletePlayer(player, key)"></i>
             </div>
           </div>
           <div class="col-lg-2 col-md-2 col-sm-2 col-xsm-2 center">

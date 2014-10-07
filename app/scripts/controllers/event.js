@@ -9,7 +9,7 @@
       if (date && time) {
         return date + ' ' + time;
         } else {
-          return "";
+          return '';
         }
     };
 
@@ -27,7 +27,7 @@
     $scope.getEvent = function (key) {
       var ref = fbutil.ref('events/' + key);
       $rootScope.singleEventId = key;
-      ref.once('value', function (data) {
+      ref.on('value', function (data) {
         $rootScope.singleEvent = data.val();
 
       });
@@ -36,18 +36,22 @@
     };
 
     // $scope.players = fbutil.ref('events/' + $rootScope.singleEventId).syncArray('players');
+    $scope.added = true;
 
     $scope.signUp = function (user, key) {
       console.log(user);
       console.log($rootScope.singleEventId);
-
+      $scope.added = false;
       var ref = fbutil.ref('events/' + $rootScope.singleEventId);
       ref.child('players').push(user);
+
     };
 
     $scope.deletePlayer = function (user, key) {
+      console.log(key);
+      $scope.added = true;
       var ref = fbutil.ref('events/' + $rootScope.singleEventId);
-      ref.child('players').delete(user);
+      ref.child('players').child(key).remove();
     };
 
     $scope.CollapseDemoCtrl = function(){

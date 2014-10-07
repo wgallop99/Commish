@@ -611,7 +611,6 @@ input[name="hiddenButtons"] {
 .plus, .minus {
   font-size: 4em;
   text-decoration: none;
-  margin-right: 10px;
   background-color: transparent;
   border: none;
   color: $main-color;
@@ -633,14 +632,6 @@ input[name="hiddenButtons"] {
   color: #428bca;
 }
 
-.dash {
-  font-size: 9em;
-  position: absolute;
-  top: 52%;
-  left: 45.5%;
-  color: white;
-}
-
 .hide {
   display: none;
 }
@@ -654,6 +645,14 @@ input[name="hiddenButtons"] {
   max-width: 100%;
 } */
 
+.container {
+  width: 100%;
+}
+
+.team{
+  padding: 0px;
+}
+
 .dash {
   display: none;
 }
@@ -666,8 +665,17 @@ input[name="hiddenButtons"] {
   display: none;
 }
 
-.score p {
+.team {
+  margin: 0px 45px;
+}
+
+/* .score p {
   font-size: 7em;
   margin: 0px 20px;
+} */
 }
+
+@media screen and (max-width: 664px) {
+
+
 }
