@@ -343,8 +343,8 @@ h2 {
 
   input, select {
     display: block;
-    margin: 10px 30%;
-    width: 40%;
+    margin: 10px 21%;
+    width: 60%;
   }
 }
 
@@ -367,8 +367,6 @@ h2 {
   display: inline-block;
   padding: 5px;
   margin: 0px 5px 20px 5px;
-  width: 23%;
-
 }
 
 .singleEvent {
@@ -692,6 +690,36 @@ input[name="hiddenButtons"] {
   max-width: 100%;
 } */
 
+.modal-dialog {
+  width: 100%;
+}
+
+.searchType {
+  width: 100%;
+}
+
+.searchDate {
+  width: 100%;
+}
+
+.searchLocale {
+  width: 100%;
+}
+
+
+.eventLists {
+  text-align: center;
+}
+
+.eventContainer {
+  .eventDate {
+  width: 100%;
+  }
+
+  .eventIcon {
+    width: 100%;
+  }
+}
 .container {
   width: 100%;
 }
