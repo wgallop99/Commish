@@ -20,8 +20,12 @@ angular.module('firetestApp')
           type: newEvent.type,
           date: newEvent.date,
           time: newEvent.time,
-          location: newEvent.location
+          location: newEvent.location,
+          players: {
+            value: $scope.profile.email
+          }
       });
+
     };
 
     $scope.getEvent = function (key) {

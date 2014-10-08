@@ -56,7 +56,6 @@
           <div class="col-lg-5 col-md-5 col-sm-5 col-xsm-5 team1">
             <div ng-class-odd="'hide'" ng-repeat="(key, player) in singleEvent.players | unique:player">
               <a href="mailto:{{player}}">{{player}}</a>
-              <i ng-if="player == auth.user.email" class="fa fa-remove" ng-click="deletePlayer(player, key)"></i>
             </div>
           </div>
           <div class="col-lg-2 col-md-2 col-sm-2 col-xsm-2 center">
@@ -68,7 +67,6 @@
           <div class="col-lg-5 col-md-5 col-sm-5 col-xsm-5 team2">
             <div ng-class-even="'hide'" ng-repeat="(key, player) in singleEvent.players | unique:player">
               <a href="mailto:{{player}}">{{player}}</a>
-              <i ng-if="player == auth.user.email" class="fa fa-remove" ng-click="deletePlayer(player, key)"></i>
             </div>
           </div>
         </div>

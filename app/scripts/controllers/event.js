@@ -30,6 +30,7 @@
       ref.on('value', function (data) {
         $rootScope.singleEvent = data.val();
 
+
       });
 
       console.log($rootScope.singleEvent);
@@ -40,22 +41,27 @@
       console.log($rootScope.singleEventId);
 
       var ref = fbutil.ref('events/' + $rootScope.singleEventId);
+
+
       var players = $rootScope.singleEvent.players;
-      ref.child('players').push(user);
+      console.log(players);
       Object.keys(players).forEach(function (player) {
-        if(player === $rootScope.auth.user.email) {
-          console.log(player);
-          return console.log('you are already signed up!');
+
+        if(players[player] !== $rootScope.auth.user.email) {
+            console.log(user);
+            console.log(players[player]);
+          console.log("inside player check");
+          ref.child('players').push(user);
         }
       });
+
     };
 
-    $scope.deletePlayer = function (user, key) {
-
-      var ref = fbutil.ref('events/' + $rootScope.singleEventId);
-      ref.child('players').child(key).remove();
-      $scope.added = false;
-    };
+    // $scope.deletePlayer = function (user, key) {
+    //
+    //   var ref = fbutil.ref('events/' + $rootScope.singleEventId);
+    //   ref.child('players').child(key).remove();
+    // };
 
     $scope.CollapseDemoCtrl = function(){
       $scope.isCollapsed = true;
