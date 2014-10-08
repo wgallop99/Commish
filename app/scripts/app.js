@@ -18,5 +18,6 @@ angular.module('firetestApp', [
     'firebase.utils',
     'simpleLogin',
     'ui.bootstrap',
+    'ui.unique',
     'angularMoment'
   ]);

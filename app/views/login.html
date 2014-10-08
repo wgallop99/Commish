@@ -1,21 +1,15 @@
 
 <h2>Login Page</h2>
 
-<fieldset>
-  <p>
-    <button  class="button" ng-click="oauthlogin('twitter')">Twitter</button>
-  </p>
-</fieldset>
-
-<form role="form">
+<form role="form loginContainer">
   <p class="form-group">
     <input id="loginEmail" required name="email" type="email" ng-model="email" placeholder="Email" class="form-control" />
   </p>
   <p class="form-group">
-    <input id="loginPass" required name="pass" type="password" ng-model="pass" placeholder="Password" class="form-control" />
+    <input id="loginPass" required name="pass" type="password" ng-model="pass" placeholder="Password" class="form-control loginInput" />
   </p>
   <p class="form-group" ng-cloak ng-show="createMode">
-    <input id="loginConfirm" required name="confirm" type="password" ng-model="confirm" placeholder="Confirm Password" class="form-control" />
+    <input id="loginConfirm" required name="confirm" type="password" ng-model="confirm" placeholder="Confirm Password" class="form-control loginInput" />
   </p>
 
   <p>

@@ -24,6 +24,25 @@ button {
   outline: none;
 }
 
+/* main page  */
+
+.logoContainer {
+  text-align: center;
+  margin-top: 30px;
+
+  h1 {
+    font-family: 'Graduate', cursive;
+    font-size: 8em;
+    text-shadow: 2px 2px 8px black;
+    vertical-align: middle;
+/*     display: inline-block; */
+  }
+  img {
+  width: 30%;
+/*   display: inline-block; */
+  }
+}
+
 /* Side Nav Menu styling */
 
 .sideMenu {
@@ -75,10 +94,15 @@ h2, a {
   color: $main-color;
 }
 
+h1 {
+  font-family: 'Graduate', cursive;
+}
+
 h3 {
   color: $main-color;
   /* text-shadow: black 0 2px; */
   margin-top: 10px 0px;
+  text-shadow: 2px 2px 3px black;
 }
 
 .button {
@@ -183,6 +207,9 @@ h2 {
 
 .eventHeading {
   font-size: 6em;
+  text-shadow: 2px 2px 8px black;
+  color: white;
+  font-family: 'Graduate', cursive;
 }
 
 .eventSearch {
@@ -280,7 +307,17 @@ h2 {
   color: red;
 }
 
+
+
 /* Profile Page */
+
+.loginContainer {
+  text-align: left;
+
+  .loginInput {
+    width: 100px;
+  }
+}
 
 .addEventContainer {
   text-align: center;
@@ -288,12 +325,15 @@ h2 {
 
 .addButton {
   margin-top: 20px;
-  margin-left: 10px;
   padding: 10px 20px;
   color: $main-color;
-  border-color: $main-color;
-  font-size: 1em;
+  border: 4px solid $main-color;
+  font-size: 2em;
   font-weight: bold;
+}
+
+.addButton:hover {
+  border: 4px solid $main-color;
 }
 
 .addForm {
@@ -319,15 +359,15 @@ h2 {
   margin: 15px 0px;
   padding: 10px 0px;
   overflow: auto;
-  max-width: 830px;
+  max-width: 100%;
 }
 
 .userEvent {
   text-align: center;
   display: inline-block;
   padding: 5px;
-  margin: 5px 10px 5px 10px;
-  width: 187px;
+  margin: 0px 5px 20px 5px;
+  width: 23%;
 
 }
 
@@ -431,9 +471,11 @@ h2 {
   border-radius: 10px;
   text-align: center;
   padding: 10px;
+  height: 590px;
 
   h1 {
     font-size: 4em;
+    padding: 0px 43px;
   }
 }
 
@@ -555,6 +597,7 @@ input[name="hiddenButtons"] {
   text-align: center;
   display: inline-block;
   margin-top: 20px;
+  vertical-align: top;
 }
 
 /* scoreboard styling with each different sport*/
@@ -601,8 +644,12 @@ input[name="hiddenButtons"] {
 
 .score {
 
+  h1 {
+    padding: 0px;
+  }
+
   p {
-    font-size: 12em;
+    font-size: 7em;
     margin: 0px;
     padding: 0px;
   }
@@ -675,7 +722,63 @@ input[name="hiddenButtons"] {
 } */
 }
 
-@media screen and (max-width: 664px) {
+@media screen and (max-width: 640px) {
 
+.inGameContainer {
+  h1 {
+    font-size: 2em;
+  }
+}
+.number {
+  font-size: 30px;
+}
+.score {
+  h1 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 4em;
+  }
+}
+
+.logoContainer {
+  h1 {
+    font-size: 4.5em;
+  }
+}
+
+}
+
+@media screen and (max-width: 470px) {
+
+.number {
+  font-size: 20px;
+}
+
+.team {
+  margin: 10px;
+}
+
+.score {
+  p {
+    font-size: 2.5em;
+  }
+
+}
+
+.plus, .minus {
+  font-size: 2em;
+}
+
+.container {
+  padding: 0px;
+}
+
+.fballScore, .bballScore {
+  font-size: .7em;
+  margin-right: 0px;
+  padding: 3px;
+}
 
 }

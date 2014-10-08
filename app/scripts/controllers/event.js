@@ -31,27 +31,30 @@
         $rootScope.singleEvent = data.val();
 
       });
-      // $rootScope.singleEvent = $firebase(ref);
+
       console.log($rootScope.singleEvent);
     };
-
-    // $scope.players = fbutil.ref('events/' + $rootScope.singleEventId).syncArray('players');
-    $scope.added = true;
 
     $scope.signUp = function (user, key) {
       console.log(user);
       console.log($rootScope.singleEventId);
-      $scope.added = false;
-      var ref = fbutil.ref('events/' + $rootScope.singleEventId);
-      ref.child('players').push(user);
 
+      var ref = fbutil.ref('events/' + $rootScope.singleEventId);
+      var players = $rootScope.singleEvent.players;
+      ref.child('players').push(user);
+      Object.keys(players).forEach(function (player) {
+        if(player === $rootScope.auth.user.email) {
+          console.log(player);
+          return console.log('you are already signed up!');
+        }
+      });
     };
 
     $scope.deletePlayer = function (user, key) {
-      console.log(key);
-      $scope.added = true;
+
       var ref = fbutil.ref('events/' + $rootScope.singleEventId);
       ref.child('players').child(key).remove();
+      $scope.added = false;
     };
 
     $scope.CollapseDemoCtrl = function(){
