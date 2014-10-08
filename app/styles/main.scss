@@ -158,10 +158,10 @@ h3 {
 }
 
 .carousel.fade .item {
-  -moz-transition: opacity ease-in-out .7s;
-  -o-transition: opacity ease-in-out .7s;
-  -webkit-transition: opacity ease-in-out .7s;
-  transition: opacity ease-in-out .7s;
+  -moz-transition: opacity ease-in-out 4s;
+  -o-transition: opacity ease-in-out 4s;
+  -webkit-transition: opacity ease-in-out 4s;
+  transition: opacity ease-in-out 4s;
   left: 0 !important;
   opacity: 0;
   top:0;
@@ -178,10 +178,10 @@ h3 {
 
 .carousel.fade .item.active {
   opacity: 1;
-  -moz-transition: opacity ease-in-out .7s;
-  -o-transition: opacity ease-in-out .7s;
-  -webkit-transition: opacity ease-in-out .7s;
-  transition: opacity ease-in-out .7s;
+  -moz-transition: opacity ease-in-out 4s;
+  -o-transition: opacity ease-in-out 4s;
+  -webkit-transition: opacity ease-in-out 4s;
+  transition: opacity ease-in-out 4s;
   z-index:2;
 }
 
