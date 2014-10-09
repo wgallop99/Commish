@@ -54,7 +54,7 @@
       <div class="modal-footer">
         <div class="row teamContainer" ng-show="singleEvent.icon === 'flaticon-basketball35' || singleEvent.icon === 'flaticon-rugby98' || singleEvent.icon === 'flaticon-soccer43' || singleEvent.icon ==='flaticon-basketball35' || singleEvent.icon === 'flaticon-man362'">
           <div class="col-lg-5 col-md-5 col-sm-5 col-xsm-5 team1">
-            <div ng-class-odd="'hide'" ng-repeat="(key, player) in singleEvent.players | unique:player">
+            <div ng-class-odd="'hide'" ng-repeat="(key, player) in singleEvent.players">
               <a href="mailto:{{player}}">{{player}}</a>
             </div>
           </div>
@@ -65,7 +65,7 @@
 
           </div>
           <div class="col-lg-5 col-md-5 col-sm-5 col-xsm-5 team2">
-            <div ng-class-even="'hide'" ng-repeat="(key, player) in singleEvent.players | unique:player">
+            <div ng-class-even="'hide'" ng-repeat="(key, player) in singleEvent.players">
               <a href="mailto:{{player}}">{{player}}</a>
             </div>
           </div>
