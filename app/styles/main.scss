@@ -136,15 +136,13 @@ h3 {
   margin:0px;
   padding: 0px;
 
-  img {
-    min-width: 100%;
-    min-height: 100%;
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    filter: grayscale(100%);
-    margin: 0px;
-    padding: 0px;
-    overflow: hidden;
+ img {
+  size: cover;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: grayscale(100%);
+  margin: 0px;
+  padding: 0px;
   }
 }
 
