@@ -37,23 +37,21 @@
     };
 
     $scope.signUp = function (user, key) {
-      console.log(user);
-      console.log($rootScope.singleEventId);
 
       var ref = fbutil.ref('events/' + $rootScope.singleEventId);
-
-
       var players = $rootScope.singleEvent.players;
-      console.log(players);
+      var isAdded = false;
+      var person;
       Object.keys(players).forEach(function (player) {
-
-        if(players[player] !== $rootScope.auth.user.email) {
-            console.log(user);
-            console.log(players[player]);
-          console.log("inside player check");
-          ref.child('players').push(user);
+        person = $rootScope.auth.user.email;
+        if(players[player] === $rootScope.auth.user.email) {
+          isAdded = true;
         }
       });
+
+      if(!isAdded) {
+        ref.child('players').push(person);
+      }
 
     };
 
